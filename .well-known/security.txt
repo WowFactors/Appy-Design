@@ -1,0 +1,4 @@
+Contact: mailto:hello@appydesign.in
+Expires: 2027-07-29T00:00:00Z
+Preferred-Languages: en
+Canonical: https://appydesign.in/.well-known/security.txt

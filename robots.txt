@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://appydesign.in/sitemap.xml

@@ -1,0 +1,1049 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ClaimIt UX/UI case study presented as a static 24-section presentation.">
+  <title>ClaimIt — UX/UI Case Study</title>
+  <script src="../analytics.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CYZZQPG89H"></script>
+  <style>
+    :root{
+      --night:#07131f;--night-2:#0d2030;--blue:#0877c9;--gold:#ffc21a;
+      --paper:#fffdf8;--ivory:#f7f4ed;--pale:#eaf5fc;--ink:#101923;
+      --muted:#5d6974;--line:#dce3e8;--white:#fff;--green:#12b66f;--red:#e55656;
+      --max:1280px;--radius:24px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:#dfe4e8;color:var(--ink);font-family:"Segoe UI",Aptos,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}
+    h1,h2,h3,p,blockquote{margin-top:0}
+    .slide{position:relative;width:min(100%,var(--max));min-height:720px;margin:0 auto 18px;padding:58px 72px;background:var(--paper);overflow:hidden}
+    .slide.dark{background:var(--night);color:var(--white)}
+    .slide.soft{background:var(--ivory)}
+    .slide.pale{background:var(--pale)}
+    .slide.gold{background:var(--gold);color:var(--night)}
+    .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:24px;font-size:13px;font-weight:850;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+    .eyebrow:before{content:"";width:30px;height:3px;background:currentColor}
+    .dark .eyebrow{color:var(--gold)}
+    h1{font-size:72px;line-height:.92;letter-spacing:-.06em;margin-bottom:28px}
+    h2{max-width:960px;font-size:48px;line-height:1.02;letter-spacing:-.045em;margin-bottom:20px}
+    h3{font-size:22px;line-height:1.18;letter-spacing:-.02em;margin-bottom:9px}
+    .lead{max-width:820px;font-size:22px;line-height:1.42;color:var(--muted)}
+    .dark .lead,.dark .muted{color:#b8c6d0}.muted{color:var(--muted)}
+    .content{margin-top:42px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .card{padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--white)}
+    .dark .card{background:var(--night-2);border-color:rgba(255,255,255,.1)}
+    .card.blue{background:var(--blue);border-color:var(--blue);color:white}
+    .card.gold-card{background:var(--gold);border-color:var(--gold);color:var(--night)}
+    .label{margin-bottom:12px;font-size:12px;font-weight:850;letter-spacing:.11em;text-transform:uppercase;color:var(--blue)}
+    .dark .label{color:var(--gold)}
+    .big-number{font-size:48px;line-height:1;font-weight:900;letter-spacing:-.05em}
+    .rule{height:1px;background:var(--line);margin:18px 0}
+    .dark .rule{background:rgba(255,255,255,.12)}
+    .bullet-list{display:grid;gap:13px;margin-top:20px}
+    .bullet{display:grid;grid-template-columns:12px 1fr;gap:13px;align-items:start;font-size:17px}
+    .bullet:before{content:"";width:8px;height:8px;margin-top:8px;border-radius:50%;background:var(--gold)}
+    .phone-row{display:flex;justify-content:center;align-items:flex-end;gap:12px;height:505px}
+    .phone-row img{height:470px;width:auto;object-fit:contain;filter:drop-shadow(0 22px 24px rgba(7,19,31,.2))}
+    .phone-row img:nth-child(2){height:510px}
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+    .kpi{min-height:132px;padding:20px;border-radius:20px;background:var(--ivory)}
+    .kpi strong{display:block;font-size:38px;line-height:1;color:var(--blue);margin-bottom:12px}
+    .kpi span{font-size:14px;color:var(--muted)}
+    .dark .kpi{background:var(--night-2)}.dark .kpi span{color:#b8c6d0}.dark .kpi strong{color:var(--gold)}
+    .goal{min-height:230px;display:flex;flex-direction:column;justify-content:space-between}
+    .goal b{font-size:40px;color:var(--blue)}
+    .goal p{margin:0;color:var(--muted);font-size:16px}
+    .dark .goal p{color:#b8c6d0}
+    .project-goals-layout{display:grid;grid-template-columns:.92fr 1.08fr;gap:36px;align-items:center;margin-top:30px}
+    .project-goal-list{display:grid;gap:12px;margin-top:24px}
+    .project-goal-item{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;padding:16px;border:1px solid var(--line);border-radius:18px;background:white;box-shadow:0 10px 24px rgba(16,25,35,.055)}
+    .project-goal-item span{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--blue);color:white;font-weight:900}
+    .project-goal-item strong{display:block;margin-bottom:4px;color:var(--night);font-size:18px}
+    .project-goal-item p{margin:0;color:var(--muted);font-size:14px;line-height:1.4}
+    .project-goals-visual{height:535px;border-radius:28px;overflow:hidden;background:white;box-shadow:0 22px 46px rgba(16,25,35,.14)}
+    .project-goals-visual img{width:100%;height:100%;object-fit:cover;display:block}
+    .requirements-board{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;margin-top:30px;align-items:stretch}
+    .requirements-brief{display:flex;flex-direction:column;justify-content:space-between;min-height:470px;padding:30px;border-radius:26px;background:var(--night);color:white;box-shadow:0 18px 38px rgba(16,25,35,.16)}
+    .requirements-brief .label{color:#8fc7ff}
+    .requirements-brief h3{margin:12px 0 18px;color:white;font-size:38px;line-height:1.06}
+    .requirements-brief p{margin:0;color:#b8c6d0;font-size:17px;line-height:1.52}
+    .requirements-outcome{margin-top:26px;padding:18px;border-radius:18px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}
+    .requirements-outcome strong{display:block;margin-bottom:6px;color:var(--gold);font-size:16px}
+    .requirements-outcome p{font-size:14px;line-height:1.42;color:white}
+    .requirements-focus{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .requirement-tile{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;padding:18px;border:1px solid var(--line);border-radius:20px;background:white;box-shadow:0 10px 24px rgba(16,25,35,.055)}
+    .requirement-tile span{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#fff1c6;color:var(--blue);font-weight:900}
+    .requirement-tile strong{display:block;margin-bottom:5px;color:var(--night);font-size:16px}
+    .requirement-tile p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.38}
+    .comparison{display:grid;grid-template-columns:1.15fr repeat(5,1fr);margin-top:25px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:white}
+    .comparison div{padding:12px 10px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);font-size:12px;text-align:center}
+    .comparison div:nth-child(6n+1){text-align:left;font-weight:750}
+    .comparison div:nth-child(6n){border-right:0;background:var(--night);color:white}
+    .comparison .head{font-weight:850;background:var(--ivory)}
+    .comparison .yes{color:var(--green);font-weight:850}.comparison .no{color:#98a2aa}.comparison .claim{color:var(--gold)!important}
+    .lower-split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+    .compact-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .compact-item{padding:11px 12px;border-radius:12px;background:var(--ivory);font-size:13px}
+    .pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .pain-col{padding:28px;border-radius:24px;background:var(--night);color:white}
+    .solution-col{padding:28px;border-radius:24px;background:var(--pale)}
+    .pair{padding:16px 0;border-top:1px solid rgba(255,255,255,.12);font-size:17px}
+    .pair:first-of-type{border-top:0}.solution-col .pair{border-color:var(--line)}
+    .pair small{display:block;margin-bottom:4px;color:var(--gold);font-weight:850}.solution-col .pair small{color:var(--blue)}
+    .pain-solution-stage{display:grid;grid-template-columns:18% 1fr 18%;gap:16px;height:470px;margin-top:24px}
+    .emotion-photo{overflow:hidden;border-radius:22px;background:var(--ivory)}
+    .emotion-photo img{width:100%;height:100%;object-fit:cover}
+    .compare-board{display:grid;grid-template-rows:48px repeat(4,1fr);gap:10px;min-width:0}
+    .compare-heads,.compare-row{display:grid;grid-template-columns:1fr 1fr;gap:42px;position:relative}
+    .compare-header{display:flex;align-items:center;justify-content:center;border-radius:16px;color:white;font-size:18px;font-weight:850}
+    .compare-header.pain{background:#f43f50}.compare-header.solution{background:#1258d6}
+    .compare-item{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:center;padding:12px 16px;border:1px solid #e4e8eb;border-radius:18px;background:white;box-shadow:0 5px 14px rgba(7,19,31,.04)}
+    .compare-item.pain{background:#fff8f8}.compare-item.solution{background:#f7faff}
+    .compare-index{width:46px;height:46px;display:grid;place-items:center;border-radius:14px;background:#ffe8eb;color:#e93349;font-size:12px;font-weight:900}
+    .solution .compare-index{background:#e7efff;color:#1258d6}
+    .compare-item h3{margin:0 0 3px;font-size:15px;letter-spacing:-.01em}
+    .compare-item p{margin:0;color:var(--muted);font-size:12px;line-height:1.35}
+    .compare-arrow{position:absolute;left:50%;top:50%;translate:-50% -50%;z-index:2;width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:white;color:var(--blue);font-size:20px;font-weight:900;box-shadow:0 4px 12px rgba(7,19,31,.08)}
+    .group-card{min-height:260px;display:flex;flex-direction:column;justify-content:space-between}
+    .group-mark{width:46px;height:46px;display:grid;place-items:center;border-radius:14px;background:var(--gold);font-weight:900}
+    .audience-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+    .audience-card{position:relative;display:grid;grid-template-columns:39% 61%;height:232px;overflow:hidden;border:1px solid var(--line);border-radius:26px;background:white;box-shadow:0 12px 32px rgba(7,19,31,.1)}
+    .audience-photo{width:100%;height:100%;object-fit:cover}
+    .audience-copy{position:relative;padding:20px 24px;overflow:hidden}
+    .audience-copy:after{content:"";position:absolute;right:-82px;bottom:-116px;width:220px;height:220px;border-radius:50%;background:#fff4cf;z-index:0}
+    .audience-copy>*{position:relative;z-index:1}
+    .audience-head{display:flex;align-items:center;gap:14px;margin-bottom:11px}
+    .audience-index{width:42px;height:42px;display:grid;place-items:center;flex:0 0 auto;border-radius:50%;background:var(--blue);color:white;font-size:13px;font-weight:900}
+    .audience-card:nth-child(even) .audience-index{background:var(--gold);color:var(--night)}
+    .audience-head h3{margin:0;color:#0b55c9;font-size:25px}
+    .audience-desc{min-height:43px;margin:0;color:var(--muted);font-size:14px;line-height:1.42}
+    .audience-rule{width:52px;height:3px;margin:12px 0 9px;border-radius:3px;background:var(--gold)}
+    .audience-traits{display:grid;grid-template-columns:1fr;gap:3px;margin:0;padding:0;list-style:none}
+    .audience-traits li{display:grid;grid-template-columns:8px 1fr;gap:9px;font-size:13px;font-weight:650;line-height:1.35}
+    .audience-traits li:before{content:"";width:6px;height:6px;margin-top:6px;border-radius:50%;background:var(--blue)}
+    .audience-card:nth-child(even) .audience-traits li:before{background:var(--gold)}
+    .persona{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .persona-main{min-height:420px;padding:32px;background:white}
+    .persona-side{min-height:420px;padding:32px;background:var(--night);color:white}
+    .avatar{width:62px;height:62px;display:grid;place-items:center;border-radius:50%;background:var(--gold);font-size:24px;font-weight:900}
+    .quote{font-size:36px;line-height:1.12;letter-spacing:-.035em;font-weight:800;margin:50px 0 0}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+    .chip{padding:7px 10px;border-radius:999px;background:var(--pale);color:var(--blue);font-size:12px;font-weight:750}
+    .persona-sheets{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:26px}
+    .persona-profile{display:grid;grid-template-columns:32% 68%;min-height:345px;overflow:hidden;border:1px solid #e4e8eb;border-radius:18px;background:white;box-shadow:0 6px 18px rgba(7,19,31,.055)}
+    .persona-visual{position:relative;height:auto;min-height:345px;overflow:hidden;background:var(--gold)}
+    .persona-visual img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+    .persona-quote{display:none}
+    .persona-quote:before{content:"“";display:block;margin-bottom:2px;font-size:44px;line-height:.7;font-weight:900;color:var(--blue)}
+    .persona-profile.blue-persona .persona-quote{color:white}
+    .persona-profile.blue-persona .persona-quote:before{color:var(--gold)}
+    .persona-details{display:flex;flex-direction:column;justify-content:center;padding:20px 22px}
+    .persona-summary{display:grid;grid-template-columns:1fr;gap:8px;align-items:start}
+    .persona-name h3{margin:0 0 4px;color:#0b55c9;font-size:26px}
+    .persona-meta{font-size:13px;font-weight:650;color:#37434e}
+    .persona-facts{display:none}
+    .persona-fact{padding:10px 11px;border-radius:10px;background:var(--pale)}
+    .persona-fact b{display:block;margin-bottom:3px;color:var(--blue);font-size:14px}
+    .persona-fact span{font-size:12px;color:var(--muted)}
+    .persona-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+    .persona-detail-grid h4{margin:0 0 5px;color:#0b55c9;font-size:13px}
+    .persona-detail-grid ul{display:grid;gap:3px;margin:0;padding:0 0 0 16px}
+    .persona-detail-grid li{font-size:11.5px;line-height:1.28;color:#27323d}
+    .persona-detail-grid li:nth-child(n+3){display:none}
+    .persona-about{grid-column:1/-1;order:-1;padding:11px 13px;border-radius:12px;background:#fff5d5}
+    .persona-about p{margin:0;font-size:11.5px;line-height:1.4;color:#27323d}
+    .card-sorting-layout{display:grid;grid-template-columns:1.08fr .92fr;gap:38px;align-items:stretch;margin-top:22px}
+    .card-sorting-copy .lead{font-size:18px}
+    .sorting-story{display:grid;gap:0;margin-top:28px;border-top:1px solid var(--line)}
+    .sorting-story-block{padding:22px 0;border-bottom:1px solid var(--line)}
+    .sorting-story-block:last-child{border-bottom:0}
+    .sorting-story-block h3{margin-bottom:8px;color:var(--blue);font-size:21px}
+    .sorting-story-block p{margin:0;color:var(--muted);font-size:16px;line-height:1.58}
+    .sorting-outcome{margin-top:4px;padding:18px 20px;border-radius:16px;background:var(--night);color:white}
+    .sorting-outcome strong{display:block;margin-bottom:6px;color:var(--gold);font-size:13px;text-transform:uppercase;letter-spacing:.09em}
+    .sorting-outcome p{margin:0;color:#d3dde4;font-size:15px;line-height:1.5}
+    .sorting-placeholder{min-height:500px;display:grid;place-items:center;padding:34px;border:2px dashed #b9c7d0;border-radius:24px;background:linear-gradient(145deg,#f8fbfd,#eaf5fc);text-align:center}
+    .sorting-placeholder-mark{width:72px;height:72px;display:grid;place-items:center;margin:0 auto 18px;border-radius:20px;background:white;border:1px solid var(--line);color:var(--blue);font-size:18px;font-weight:900;box-shadow:0 8px 20px rgba(7,19,31,.06)}
+    .sorting-placeholder strong{display:block;margin-bottom:8px;font-size:22px;color:var(--ink)}
+    .sorting-placeholder span{display:block;max-width:300px;color:var(--muted);font-size:15px;line-height:1.5}
+    .sorting-board{min-height:500px;display:grid;gap:18px;padding:26px;border:1px solid #d9e4ee;border-radius:24px;background:linear-gradient(145deg,#f8fbfd,#eaf5fc);box-shadow:0 18px 38px rgba(16,25,35,.08)}
+    .sorting-group{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:start;padding:16px;border:1px solid #dce6ef;border-radius:18px;background:rgba(255,255,255,.86)}
+    .sorting-group-title{display:grid;gap:6px;color:var(--blue);font-weight:900}
+    .sorting-group-title span{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--blue);color:white;font-size:13px}
+    .sorting-cards{display:flex;flex-wrap:wrap;gap:8px}
+    .sorting-card{padding:8px 10px;border:1px solid #d8e4ef;border-radius:10px;background:white;color:#25313d;font-size:12px;font-weight:750;box-shadow:0 4px 12px rgba(7,19,31,.05)}
+    .user-flow-slide{background:#f7f9fc}
+    .user-flow-board{display:grid;gap:14px;margin-top:28px}
+    .journey-row{--journey:#0969da;--journey-soft:#eef6ff;display:grid;grid-template-columns:220px minmax(0,1fr);gap:20px;align-items:center;padding:18px 20px;border:1px solid #dbe4ec;border-radius:20px;background:white;box-shadow:0 8px 24px rgba(17,42,64,.06)}
+    .journey-row.redeem{--journey:#efa900;--journey-soft:#fff8e7}
+    .journey-row.discover{--journey:#159447;--journey-soft:#effaf3}
+    .journey-meta{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:start}
+    .journey-badge{width:48px;height:48px;display:grid;place-items:center;border-radius:50%;background:var(--journey);color:white;font-size:22px;font-weight:900}
+    .journey-meta h3{margin:0 0 5px;color:var(--journey);font-size:18px}
+    .journey-meta p{margin:0;color:#52616d;font-size:13px;line-height:1.45}
+    .journey-path{display:flex;align-items:center;min-width:0}
+    .journey-step{flex:1;min-width:0;min-height:62px;display:flex;align-items:center;justify-content:center;gap:9px;padding:10px 9px;border:1px solid color-mix(in srgb,var(--journey) 28%,white);border-radius:12px;background:var(--journey-soft);color:#1b2733;text-align:center;font-size:12px;line-height:1.28;font-weight:750}
+    .journey-step .step-icon{flex:0 0 28px;width:28px;height:28px;display:grid;place-items:center;color:var(--journey);font-size:18px;font-weight:900}
+    .journey-arrow{flex:0 0 28px;color:#7d8b96;text-align:center;font-size:21px;font-weight:700}
+    .branch{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:center;margin-top:35px;padding:22px;border-radius:20px;background:var(--night-2)}
+    .branch div{padding:18px;border-radius:16px;background:rgba(255,255,255,.06)}
+    .branch strong{color:var(--gold)}
+    .ia-slide{background:#f8fafc}
+    .ia-map{margin-top:18px;padding:16px 18px 18px;border:1px solid #dfe6ec;border-radius:22px;background:white;box-shadow:0 10px 30px rgba(17,42,64,.06);overflow-x:auto}
+    .ia-map-inner{min-width:1080px}
+    .ia-top{display:flex;flex-direction:column;align-items:center}
+    .ia-brand{min-width:170px;padding:10px 22px;border-radius:10px;background:var(--night);color:white;text-align:center;font-size:13px;font-weight:850;letter-spacing:.04em}
+    .ia-down{height:12px;border-left:1.5px solid #8e9aa4}
+    .ia-auth{display:flex;align-items:center;gap:48px;position:relative}
+    .ia-auth:before{content:"";position:absolute;left:50%;top:-12px;height:12px;border-left:1.5px solid #8e9aa4}
+    .ia-auth:after{content:"";position:absolute;left:25%;right:25%;top:0;border-top:1.5px solid #8e9aa4}
+    .ia-auth .ia-node{position:relative;margin-top:8px}
+    .ia-auth .ia-node:before{content:"";position:absolute;left:50%;top:-9px;height:9px;border-left:1.5px solid #8e9aa4}
+    .ia-node{min-width:150px;padding:7px 12px;border:1px solid #ced8e0;border-radius:8px;background:#fff;color:#1d2935;text-align:center;font-size:11px;font-weight:750;box-shadow:0 2px 6px rgba(17,42,64,.04)}
+    .ia-node .ia-icon{margin-right:7px;color:var(--node-color,#ef9f00);font-size:15px}
+    .ia-branches{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:12px;padding-top:18px}
+    .ia-branches:before{content:"";position:absolute;left:12.5%;right:12.5%;top:0;border-top:1.5px solid #8e9aa4}
+    .ia-branch{--branch:#0875df;--branch-soft:#eef6ff;position:relative;padding:0 8px 8px;border-left:1.5px solid #a6b1ba}
+    .ia-branch:before{content:"";position:absolute;left:50%;top:-18px;height:18px;border-left:1.5px solid #8e9aa4}
+    .ia-branch.menu{--branch:#f26b18;--branch-soft:#fff4ec}
+    .ia-branch.scanner{--branch:#16924b;--branch-soft:#eff9f3}
+    .ia-branch.profile{--branch:#793bd4;--branch-soft:#f6f0ff}
+    .ia-branch-head{position:relative;margin:0 auto 9px;padding:8px 10px;border:1px solid color-mix(in srgb,var(--branch) 35%,white);border-radius:9px;background:var(--branch-soft);color:var(--branch);text-align:center;font-size:12px;font-weight:900;letter-spacing:.025em}
+    .ia-list{display:grid;gap:6px}
+    .ia-item{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:7px;align-items:center;min-height:32px;padding:6px 8px;border:1px solid color-mix(in srgb,var(--branch) 24%,white);border-radius:8px;background:linear-gradient(90deg,var(--branch-soft),white);color:#26333e;font-size:10.5px;font-weight:700}
+    .ia-item-icon{color:var(--branch);font-size:14px;text-align:center}
+    .ia-child{padding:4px 6px;border-radius:6px;background:white;border:1px solid color-mix(in srgb,var(--branch) 25%,white);color:var(--branch);font-size:8.5px;font-weight:800;white-space:nowrap}
+    .ia-shared{width:210px;margin:9px auto 0;padding:7px 12px;border:1px solid #a8cdf3;border-radius:8px;background:#eef6ff;color:#0969c9;text-align:center;font-size:10.5px;font-weight:850}
+    .paper-sketch-layout{display:grid;grid-template-columns:1.12fr .88fr;gap:34px;align-items:stretch;margin-top:34px}
+    .paper-sketch-image{min-height:505px;padding:18px;border:1px solid #d9dfe5;border-radius:24px;background:white;box-shadow:0 22px 45px rgba(16,25,35,.11)}
+    .paper-sketch-image img{width:100%;height:100%;object-fit:contain;display:block}
+    .paper-sketch-content{display:grid;align-content:center;gap:18px}
+    .sketch-note{padding:24px;border:1px solid var(--line);border-radius:22px;background:white;box-shadow:0 12px 28px rgba(16,25,35,.06)}
+    .sketch-note b{display:block;margin-bottom:10px;color:var(--blue);font-size:22px}
+    .sketch-note p{margin:0;color:var(--muted);font-size:17px;line-height:1.55}
+    .sketch-points{display:grid;gap:12px}
+    .sketch-point{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;padding:16px;border:1px solid #d8e6f8;border-radius:18px;background:#f7fbff}
+    .sketch-point span{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--blue);color:white;font-weight:900}
+    .sketch-point strong{display:block;margin-bottom:4px;color:var(--night);font-size:17px}
+    .sketch-point p{margin:0;color:var(--muted);font-size:15px;line-height:1.45}
+    .wireframe-layout{display:grid;grid-template-columns:1.12fr .88fr;gap:34px;align-items:stretch;margin-top:34px}
+    .wireframe-image{min-height:505px;padding:18px;border:1px solid #d9dfe5;border-radius:24px;background:white;box-shadow:0 22px 45px rgba(16,25,35,.11)}
+    .wireframe-image img{width:100%;height:100%;object-fit:contain;display:block}
+    .wireframe-content{display:grid;align-content:center;gap:18px}
+    .wireframe-note{padding:24px;border:1px solid var(--line);border-radius:22px;background:white;box-shadow:0 12px 28px rgba(16,25,35,.06)}
+    .wireframe-note b{display:block;margin-bottom:10px;color:var(--blue);font-size:22px}
+    .wireframe-note p{margin:0;color:var(--muted);font-size:17px;line-height:1.55}
+    .wireframe-points{display:grid;gap:12px}
+    .wireframe-point{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;padding:16px;border:1px solid #d8e6f8;border-radius:18px;background:#f7fbff}
+    .wireframe-point span{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--blue);color:white;font-weight:900}
+    .wireframe-point strong{display:block;margin-bottom:4px;color:var(--night);font-size:17px}
+    .wireframe-point p{margin:0;color:var(--muted);font-size:15px;line-height:1.45}
+    .screen-wall{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;align-items:end;margin-top:32px}
+    .screen-wall img{width:100%;filter:drop-shadow(0 18px 20px rgba(0,0,0,.23))}.screen-wall img:nth-child(even){translate:0 22px}
+    .prototype{display:grid;grid-template-columns:.82fr 1.18fr;gap:34px;align-items:stretch;margin-top:26px}
+    .prototype-copy{display:flex;flex-direction:column;justify-content:space-between;min-height:520px;padding:30px;border-radius:28px;background:var(--night);color:white;box-shadow:0 18px 38px rgba(16,25,35,.18)}
+    .prototype-copy h2{color:white;font-size:42px}
+    .prototype-copy .lead{color:#c5d2dc;font-size:19px}
+    .prototype-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px 0}
+    .prototype-kpi{padding:14px;border:1px solid rgba(255,255,255,.14);border-radius:16px;background:rgba(255,255,255,.06)}
+    .prototype-kpi strong{display:block;color:var(--gold);font-size:28px;line-height:1}
+    .prototype-kpi span{display:block;margin-top:5px;color:white;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+    .prototype-checks{display:grid;gap:10px}
+    .prototype-check{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:center;color:#e7eef4;font-size:14px;font-weight:750}
+    .prototype-check span{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--gold);color:var(--night);font-weight:900}
+    .prototype-video{position:relative;height:520px;padding:16px;border:1px solid #d9dfe5;border-radius:28px;background:linear-gradient(145deg,#07131f,#0b2540);box-shadow:0 22px 46px rgba(16,25,35,.18);overflow:hidden}
+    .prototype-video:before{content:"Figma Prototype Walkthrough";position:absolute;left:28px;top:24px;z-index:2;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.92);color:var(--blue);font-size:12px;font-weight:900;letter-spacing:.04em;text-transform:uppercase}
+    .prototype-video video{width:100%;height:100%;object-fit:contain;display:block;border-radius:18px;background:#02070d}
+    .prototype-preview{position:relative;min-height:520px;padding:24px;border:1px solid #d9dfe5;border-radius:28px;background:linear-gradient(145deg,#07131f,#0b2540);box-shadow:0 22px 46px rgba(16,25,35,.18);overflow:hidden}
+    .prototype-preview:before{content:"Prototype Flow Preview";display:inline-block;margin-bottom:18px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.92);color:var(--blue);font-size:12px;font-weight:900;letter-spacing:.04em;text-transform:uppercase}
+    .prototype-preview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:end}
+    .prototype-preview-grid img{width:100%;border-radius:22px;filter:drop-shadow(0 18px 22px rgba(0,0,0,.35))}
+    .prototype-preview-grid img:nth-child(even){translate:0 28px}
+    .component-system-layout{display:grid;grid-template-columns:1.18fr .82fr;gap:34px;align-items:stretch;margin-top:34px}
+    .component-board{min-height:505px;padding:16px;border:1px solid #d9dfe5;border-radius:24px;background:white;box-shadow:0 22px 45px rgba(16,25,35,.11)}
+    .component-board img{width:100%;height:100%;object-fit:contain;display:block;border-radius:14px}
+    .component-system-content{display:grid;align-content:center;gap:18px}
+    .component-note{padding:24px;border:1px solid var(--line);border-radius:22px;background:white;box-shadow:0 12px 28px rgba(16,25,35,.06)}
+    .component-note b{display:block;margin-bottom:10px;color:var(--blue);font-size:22px}
+    .component-note p{margin:0;color:var(--muted);font-size:17px;line-height:1.55}
+    .component-points{display:grid;gap:12px}
+    .component-point{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;padding:16px;border:1px solid #d8e6f8;border-radius:18px;background:#f7fbff}
+    .component-point span{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--blue);color:white;font-weight:900}
+    .component-point strong{display:block;margin-bottom:4px;color:var(--night);font-size:17px}
+    .component-point p{margin:0;color:var(--muted);font-size:15px;line-height:1.45}
+    .foundation-layout{display:grid;grid-template-columns:1.18fr .82fr;gap:34px;align-items:stretch;margin-top:34px}
+    .foundation-board{min-height:505px;padding:16px;border:1px solid #d9dfe5;border-radius:24px;background:white;box-shadow:0 22px 45px rgba(16,25,35,.11)}
+    .foundation-board img{width:100%;height:100%;object-fit:contain;display:block;border-radius:14px}
+    .foundation-content{display:grid;align-content:center;gap:18px}
+    .foundation-note{padding:24px;border:1px solid var(--line);border-radius:22px;background:white;box-shadow:0 12px 28px rgba(16,25,35,.06)}
+    .foundation-note b{display:block;margin-bottom:10px;color:var(--blue);font-size:22px}
+    .foundation-note p{margin:0;color:var(--muted);font-size:17px;line-height:1.55}
+    .foundation-points{display:grid;gap:12px}
+    .foundation-point{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;padding:16px;border:1px solid #d8e6f8;border-radius:18px;background:#f7fbff}
+    .foundation-point span{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--blue);color:white;font-weight:900}
+    .foundation-point strong{display:block;margin-bottom:4px;color:var(--night);font-size:17px}
+    .foundation-point p{margin:0;color:var(--muted);font-size:15px;line-height:1.45}
+    .metric-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:45px}.metric{min-height:210px;padding:24px;border-radius:22px;background:var(--ivory)}.metric strong{display:block;font-size:42px;color:var(--blue);margin-bottom:35px}.metric p{font-size:16px;color:var(--muted)}
+    .accessibility-bento,.usability-bento{display:grid;grid-template-columns:.92fr 1.08fr;gap:28px;margin-top:30px;align-items:stretch}
+    .a11y-panel,.usability-panel{position:relative;padding:30px;border:1px solid var(--line);border-radius:26px;background:white;box-shadow:0 16px 34px rgba(16,25,35,.08);overflow:hidden}
+    .accessibility-bento>.a11y-panel:nth-child(1),.usability-bento>.usability-panel:nth-child(1){background:linear-gradient(145deg,#fff8e5,#fff);min-height:390px}
+    .accessibility-bento>.a11y-panel:nth-child(2),.usability-bento>.usability-panel:nth-child(2){display:grid;grid-template-rows:auto 1fr;gap:18px}
+    .accessibility-bento>.a11y-panel:nth-child(n+3),.usability-bento>.usability-panel:nth-child(n+3){display:none}
+    .a11y-panel h3,.usability-panel h3{margin:0 0 16px;color:var(--blue);font-size:23px}
+    .a11y-panel .lead,.usability-panel .lead{font-size:20px;line-height:1.45;margin-bottom:24px}
+    .a11y-list,.usability-list{display:grid;gap:14px}
+    .a11y-row,.usability-row{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:center;padding:14px;border:1px solid #dfe7ee;border-radius:18px;background:rgba(255,255,255,.78)}
+    .a11y-icon,.usability-icon{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#ffe6ad;color:var(--blue);font-size:22px;font-weight:900}
+    .a11y-row strong,.usability-row strong{display:block;color:var(--night);font-size:16px}
+    .a11y-row p,.usability-row p{margin:2px 0 0;color:#455564;font-size:13px;line-height:1.3}
+    .a11y-stats,.usability-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .a11y-stat,.usability-stat{display:grid;gap:8px;align-content:center;justify-items:start;min-height:118px;padding:18px;border:1px solid #ecd6a5;border-radius:20px;background:linear-gradient(135deg,#fff,#fff8e5)}
+    .a11y-stat .a11y-icon,.usability-stat .usability-icon{width:48px;height:48px;background:var(--gold);color:var(--night)}
+    .a11y-stat strong,.usability-stat strong{display:block;color:var(--blue);font-size:30px;line-height:1}
+    .usability-stat strong{color:var(--night);font-size:24px}
+    .a11y-stat p,.usability-stat p{margin:0;color:var(--night);font-size:13px;line-height:1.25;font-weight:700}
+    .a11y-card-grid,.usability-card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .a11y-mini,.usability-mini{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;min-height:104px;padding:16px;border:1px solid #dfe7ee;border-radius:20px;background:#fbfdff}
+    .a11y-mini .a11y-icon,.usability-mini .usability-icon{background:#e8f1ff}
+    .icon-svg{width:1em;height:1em;display:block;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .ia-icon .icon-svg,.ia-item-icon .icon-svg,.step-icon .icon-svg,.journey-badge .icon-svg{margin:auto}
+    .journey-badge .icon-svg{width:24px;height:24px}
+    .a11y-icon .icon-svg,.usability-icon .icon-svg{width:22px;height:22px}
+    .a11y-mini strong,.usability-mini strong{display:block;color:var(--night);font-size:15px}
+    .a11y-mini p,.usability-mini p{margin:3px 0 0;color:#455564;font-size:13px;line-height:1.3}
+    .a11y-review-strip,.usability-review-strip,.a11y-outcome,.usability-outcome{display:none}
+    .usability-note{background:linear-gradient(135deg,#fff8e5,white 62%)}
+    .usability-note p{margin:0;color:var(--muted);font-size:18px;line-height:1.5}
+    .handoff-board{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;margin-top:30px}
+    .handoff-hero{display:flex;flex-direction:column;justify-content:space-between;min-height:420px;padding:30px;border-radius:26px;background:var(--night);color:white;box-shadow:0 18px 38px rgba(16,25,35,.18)}
+    .handoff-hero .label{color:#8fc7ff}
+    .handoff-hero h3{max-width:520px;margin:8px 0 18px;color:white;font-size:38px;line-height:1.05}
+    .handoff-hero p{max-width:560px;margin:0;color:#b8c6d0;font-size:17px;line-height:1.55}
+    .handoff-package{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+    .handoff-pack-item{padding:16px;border:1px solid rgba(255,255,255,.14);border-radius:18px;background:rgba(255,255,255,.06)}
+    .handoff-pack-item strong{display:block;color:var(--gold);font-size:26px}
+    .handoff-pack-item span{display:block;margin-top:4px;color:white;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+    .handoff-side{display:grid;gap:14px}
+    .handoff-card{padding:20px;border:1px solid var(--line);border-radius:22px;background:white;box-shadow:0 12px 28px rgba(16,25,35,.07)}
+    .handoff-card h3{margin:0 0 14px;color:var(--blue);font-size:20px}
+    .handoff-spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .handoff-spec{padding:14px;border-radius:16px;background:#f7fbff;border:1px solid #dfe7ee}
+    .handoff-spec strong{display:block;color:var(--night);font-size:14px}
+    .handoff-spec p{margin:5px 0 0;color:var(--muted);font-size:12.5px;line-height:1.32}
+    .handoff-timeline{display:grid;gap:10px}
+    .handoff-step{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;padding:12px;border-radius:16px;background:#fff8e5;border:1px solid #ecd6a5}
+    .handoff-step span{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--gold);color:var(--night);font-weight:900}
+    .handoff-step strong{display:block;color:var(--night);font-size:14px}
+    .handoff-step p{margin:3px 0 0;color:#26333e;font-size:12.5px;line-height:1.32}
+    .landing{display:grid;grid-template-columns:.82fr 1.18fr;gap:44px;align-items:center}.landing-visual{position:relative;height:500px;border-radius:26px;overflow:hidden;background:transparent}.landing-visual>img{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 26px 32px rgba(0,0,0,.32))}
+    .launch-support-split{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}
+    .launch-support-card{display:grid;grid-template-rows:395px auto;overflow:hidden;border:1px solid var(--line);border-radius:24px;background:white;box-shadow:0 16px 34px rgba(16,25,35,.1)}
+    .launch-support-media{background:#f1f4f7;overflow:hidden}
+    .launch-support-media img{width:100%;height:100%;object-fit:cover;display:block;object-position: top;}
+    .launch-support-copy{padding:24px}
+    .launch-support-copy .label{color:var(--blue);margin-bottom:8px}
+    .launch-support-copy h3{margin-bottom:10px;color:var(--night);font-size:27px}
+    .launch-support-copy p{margin:0;color:var(--muted);font-size:16px;line-height:1.48}
+    .conclusion{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:end;height:100%}.conclusion h1{font-size:64px}.learning{padding:28px;border-left:5px solid var(--night);font-size:28px;line-height:1.25;font-weight:800}
+    @media(max-width:900px){
+      .slide{min-height:auto;margin-bottom:10px;padding:48px 28px}h1{font-size:54px}h2{font-size:40px}.grid-2,.requirements-board,.persona,.prototype,.foundation-layout,.usability-bento,.landing,.conclusion,.card-sorting-layout,.paper-sketch-layout,.wireframe-layout,.component-system-layout,.accessibility-bento,.launch-support-split,.handoff-board,.project-goals-layout{grid-template-columns:1fr}.accessibility-bento>.a11y-panel,.usability-bento>.usability-panel{grid-column:auto!important;grid-row:auto!important}.grid-3,.grid-4,.kpis,.metric-row{grid-template-columns:1fr 1fr}.comparison{overflow-x:auto}.comparison div{min-width:100px}.journey-row{grid-template-columns:1fr}.journey-path{overflow-x:auto;padding-bottom:6px}.journey-step{flex:0 0 145px}.paper-sketch-image,.wireframe-image,.component-board,.foundation-board{min-height:420px}.project-goals-visual{height:420px}.a11y-card-grid,.usability-card-grid,.a11y-review-strip,.usability-review-strip,.requirements-focus{grid-template-columns:1fr 1fr}.a11y-mini,.usability-mini{grid-column:auto!important}.screen-wall{grid-template-columns:repeat(3,1fr)}.phone-row{height:auto;flex-wrap:wrap}.phone-row img,.phone-row img:nth-child(2){height:420px}.landing-visual{height:420px}.audience-grid{grid-template-columns:1fr}.audience-card{height:250px}.persona-sheets{grid-template-columns:1fr}.persona-profile{grid-template-columns:32% 68%;min-height:320px}.persona-visual{min-height:320px}.persona-details{padding:20px}.pain-solution-stage{grid-template-columns:1fr;height:auto}.emotion-photo{height:320px}.compare-board{grid-template-rows:auto;gap:14px}.sorting-placeholder{min-height:360px}}
+    @media(max-width:560px){.grid-3,.grid-4,.kpis,.metric-row,.handoff-package,.handoff-spec-grid,.requirements-focus,.prototype-kpis,.a11y-stats,.a11y-card-grid,.a11y-review-strip,.a11y-outcome,.usability-stats,.usability-card-grid,.usability-review-strip,.usability-outcome{grid-template-columns:1fr}.a11y-stat,.usability-stat{border-left:0;border-top:1px solid #ccd6df;padding:14px 0}.a11y-stat:first-child,.usability-stat:first-child{border-top:0}.screen-wall{grid-template-columns:1fr 1fr}.lower-split{grid-template-columns:1fr}.quote{font-size:30px}.slide{padding:42px 20px}h1{font-size:46px}h2{font-size:34px}.lead{font-size:19px}.audience-card{grid-template-columns:1fr;height:auto}.audience-photo{height:240px}.audience-copy{padding:22px}.audience-desc{min-height:0}.persona-summary,.persona-detail-grid{grid-template-columns:1fr}.persona-facts{text-align:left}.persona-fact{padding:8px 0;border-top:1px solid var(--line)}.compare-heads{gap:10px}.compare-header{font-size:14px}.compare-row{grid-template-columns:1fr;gap:8px}.compare-arrow{display:none}.compare-item{grid-template-columns:40px 1fr}.emotion-photo:last-child{order:3}}
+    @media print{html,body{background:white}.slide{width:100%;min-height:100vh;margin:0;page-break-after:always;break-after:page}}
+
+    /* Web page presentation layer */
+    :root{
+      --page-bg:#f4f7fa;
+      --surface:#ffffff;
+      --surface-soft:#f7fbff;
+      --surface-warm:#fff8e5;
+      --content:1160px;
+      --section-y:86px;
+      --shadow:0 18px 44px rgba(7,19,31,.08);
+      --shadow-soft:0 10px 28px rgba(7,19,31,.06);
+    }
+    html{scroll-behavior:smooth}
+    body{background:var(--page-bg);font-family:"Segoe UI",Aptos,Arial,sans-serif;line-height:1.5}
+    main{width:100%;overflow:hidden}
+    h1,h2,h3{letter-spacing:0}
+    h1{font-size:64px;line-height:1.02;margin-bottom:24px}
+    h2{max-width:900px;font-size:42px;line-height:1.12;margin-bottom:18px}
+    h3{font-size:21px;line-height:1.25}
+    p{line-height:1.55}
+    .lead{max-width:760px;font-size:20px;line-height:1.55;color:#536170}
+    .slide{width:100%;max-width:none;min-height:auto;margin:0;padding:var(--section-y) 32px;background:var(--surface);overflow:visible}
+    .slide.soft,.slide.pale,.user-flow-slide,.ia-slide{background:var(--surface-soft)}
+    .slide.dark{background:var(--night);color:var(--white)}
+    .slide.gold{background:var(--gold);color:var(--night)}
+    .slide> :not(svg),.cover-image-slide>img{max-width:var(--content);margin-left:auto;margin-right:auto}
+    .cover-image-slide{padding:0;background:var(--gold);min-height:0!important}
+    .cover-image-slide>img{position:static!important;display:block;width:100%!important;height:auto!important;object-fit:contain!important;background:var(--gold)!important}
+    .eyebrow{margin-bottom:18px;font-size:12px;letter-spacing:.1em;color:var(--blue)}
+    .eyebrow:before{width:28px;height:2px}
+    .dark .eyebrow{color:var(--gold)}
+    .grid-2,.project-goals-layout,.requirements-board,.card-sorting-layout,.paper-sketch-layout,.wireframe-layout,.prototype,.component-system-layout,.foundation-layout,.accessibility-bento,.usability-bento,.handoff-board,.landing,.launch-support-split,.conclusion{max-width:var(--content);margin-left:auto;margin-right:auto}
+    .grid-2{gap:56px}
+    .card,.project-goal-item,.requirement-tile,.audience-card,.persona-profile,.sketch-note,.wireframe-note,.component-note,.foundation-note,.a11y-panel,.usability-panel,.handoff-card,.launch-support-card{border:1px solid #dfe7ee;border-radius:18px;background:var(--surface);box-shadow:var(--shadow-soft)}
+    .kpi,.compact-item,.persona-about,.handoff-spec,.journey-step{border-radius:14px}
+    .kpi{background:#f1f7fd;border:1px solid #d9e8f7}
+    .kpi strong{color:var(--blue)}
+    .project-goal-item,.requirement-tile,.sketch-point,.wireframe-point,.component-point,.foundation-point{border-radius:16px;box-shadow:none}
+    .requirements-brief,.prototype-copy,.handoff-hero{border-radius:18px;box-shadow:var(--shadow)}
+    .comparison,.ia-map,.project-goals-visual,.paper-sketch-image,.wireframe-image,.component-board,.foundation-board,.prototype-video,.prototype-preview,.sorting-board{border-radius:18px;box-shadow:var(--shadow-soft)}
+    .audience-card{height:auto;min-height:246px;border-radius:18px}
+    .audience-copy:after{display:none}
+    .persona-profile{border-radius:18px}
+    .persona-visual{min-height:380px}
+    .sorting-placeholder{border-radius:18px;background:#f7fbff;border-color:#cbd8e4}
+    .journey-row{border-radius:18px;box-shadow:var(--shadow-soft)}
+    .ia-map{padding:24px}
+    .screen-wall{max-width:var(--content);margin-left:auto;margin-right:auto;gap:18px}
+    .screen-wall img{border-radius:24px}
+    .launch-support-card{border-radius:18px}
+    .launch-support-copy h3{font-size:24px}
+    .conclusion{min-height:420px;align-items:center}
+    .conclusion h1{font-size:56px;line-height:1.08}
+    .learning{border-left-width:4px;font-size:26px}
+    @media(max-width:900px){
+      :root{--section-y:64px}
+      .slide{padding-left:24px;padding-right:24px}
+      h1{font-size:46px;line-height:1.08}
+      h2{font-size:34px;line-height:1.18}
+      .lead{font-size:18px}
+      .grid-2,.project-goals-layout,.requirements-board,.card-sorting-layout,.paper-sketch-layout,.wireframe-layout,.prototype,.component-system-layout,.foundation-layout,.accessibility-bento,.usability-bento,.handoff-board,.landing,.launch-support-split,.conclusion{grid-template-columns:1fr}
+      .phone-row{height:auto;justify-content:flex-start;overflow-x:auto;padding-bottom:8px}
+      .phone-row img,.phone-row img:nth-child(2){height:420px}
+      .audience-grid,.persona-sheets{grid-template-columns:1fr}
+      .pain-solution-stage{grid-template-columns:1fr;height:auto}
+      .emotion-photo{height:320px}
+      .ia-map-inner{min-width:1040px}
+    }
+    @media(max-width:560px){
+      :root{--section-y:52px}
+      .slide{padding-left:18px;padding-right:18px}
+      h1{font-size:38px}
+      h2{font-size:29px}
+      h3{font-size:19px}
+      .lead{font-size:17px}
+      .kpis,.requirements-focus,.lower-split,.a11y-stats,.usability-stats,.a11y-card-grid,.usability-card-grid,.handoff-package,.handoff-spec-grid{grid-template-columns:1fr}
+      .audience-card,.persona-profile{grid-template-columns:1fr}
+      .audience-photo{height:260px}
+      .persona-visual{min-height:280px}
+      .journey-path{overflow-x:auto}
+      .journey-step{flex:0 0 150px}
+      .sorting-group{grid-template-columns:1fr}
+      .prototype-preview{min-height:auto}
+      .prototype-preview-grid{grid-template-columns:repeat(2,1fr)}
+      .launch-support-card{grid-template-rows:auto auto}
+      .launch-support-media{min-height:260px}
+    }
+    .appy-header{position:sticky;top:0;z-index:40;background:rgba(247,244,237,.88);border-bottom:2px solid #101923;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+    .appy-header-inner{max-width:80rem;height:96px;margin:0 auto;padding:0 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .appy-header-logo{display:flex;align-items:center;flex:0 0 auto;text-decoration:none;color:inherit}
+    .appy-header-logo img{width:127px;height:80px;object-fit:contain;padding:6px}
+    .appy-header-links{display:flex;align-items:center;gap:clamp(.85rem,1.8vw,1.75rem);font-size:.875rem;font-weight:500}
+    .appy-header-links a{color:#101923;text-decoration:none;transition:color .2s}
+    .appy-header-links a:hover{color:#7c2cf4}
+    .appy-header-cta{display:inline-flex;align-items:center;border-radius:9999px;background:#7c2cf4;color:#fffdf8;text-decoration:none;padding:.5rem 1.25rem;font-size:.875rem;font-weight:700;border:2px solid #101923;box-shadow:3px 3px 0 0 #101923;transition:transform .2s}
+    .appy-header-cta:hover{transform:translateY(-2px)}
+    @media(max-width:767px){
+      .appy-header-inner{height:82px}
+      .appy-header-links{display:none}
+      .appy-header-logo img{width:112px;height:70px}
+      .appy-header-cta{padding:.45rem .9rem;font-size:.82rem}
+    }
+  </style>
+</head>
+<body>
+  <header class="appy-header">
+    <nav class="appy-header-inner" aria-label="Appy Design site navigation">
+      <a href="../index.html#top" class="appy-header-logo" aria-label="Appy Design home">
+        <img src="../images/Appydesign-logo-new.png" alt="Appy Design mobile app development company" width="127" height="80">
+      </a>
+      <div class="appy-header-links">
+        <a href="../index.html#what-we-build">What we build</a>
+        <a href="../products.html">Our Products</a>
+        <a href="../index.html#process">Process</a>
+        <a href="../index.html#why-us">Why us</a>
+        <a href="https://appydesign.in/blog" target="_blank" rel="noopener noreferrer">Blog</a>
+      </div>
+      <a href="../index.html#contact-modal" class="appy-header-cta">Start your idea →</a>
+    </nav>
+  </header>
+  <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></symbol>
+    <symbol id="i-scan" viewBox="0 0 24 24"><path d="M7 3H5a2 2 0 0 0-2 2v2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2Z"/><path d="M8 8h8"/><path d="M8 12h8"/><path d="M8 16h5"/></symbol>
+    <symbol id="i-document" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7Z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M4 7h15a2 2 0 0 1 2 2v10H4a2 2 0 0 1-2-2V5a2 2 0 0 0 2 2Z"/><path d="M16 13h4"/><path d="M4 7V5h13"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M20 13 11 4H4v7l9 9Z"/><path d="M7.5 7.5h.01"/></symbol>
+    <symbol id="i-shop" viewBox="0 0 24 24"><path d="M4 10h16l-1-5H5Z"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></symbol>
+    <symbol id="i-location" viewBox="0 0 24 24"><path d="M12 21s7-5.2 7-11a7 7 0 0 0-14 0c0 5.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 10v6"/><path d="M12 7h.01"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2Z"/></symbol>
+    <symbol id="i-user-plus" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M3 21a6 6 0 0 1 12 0"/><path d="M19 8v6"/><path d="M16 11h6"/></symbol>
+    <symbol id="i-login" viewBox="0 0 24 24"><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/><path d="M14 4h5v16h-5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 2.8 8.4 7 10 4.2-1.6 7-5.6 7-10V6Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 7h18s-3 0-3-7"/><path d="M10 20a2 2 0 0 0 4 0"/></symbol>
+    <symbol id="i-banner" viewBox="0 0 24 24"><path d="M4 6h16v12H4Z"/><path d="m4 18 5-5 4 4 3-3 4 4"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><path d="M4 4h7v7H4Z"/><path d="M13 4h7v7h-7Z"/><path d="M4 13h7v7H4Z"/><path d="M13 13h7v7h-7Z"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><path d="M4 10h16v10H4Z"/><path d="M12 10v10"/><path d="M4 14h16"/><path d="M8 10c-2-1.5-1.5-5 1-5 2 0 3 5 3 5s1-5 3-5c2.5 0 3 3.5 1 5"/></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><path d="M4 6h12v12H4Z"/><path d="m16 10 5-3v10l-5-3Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 8.6c0 5.4-8.8 10.4-8.8 10.4S3.2 14 3.2 8.6A4.6 4.6 0 0 1 12 6a4.6 4.6 0 0 1 8.8 2.6Z"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a8 8 0 0 0 .1-1l2-1.5-2-3.5-2.4 1a7 7 0 0 0-1.7-1L15 6.5h-4L10.6 9a7 7 0 0 0-1.7 1l-2.4-1-2 3.5 2 1.5a8 8 0 0 0 .1 1l-2 1.5 2 3.5 2.4-1a7 7 0 0 0 1.7 1l.4 2.5h4l.4-2.5a7 7 0 0 0 1.7-1l2.4 1 2-3.5Z"/></symbol>
+    <symbol id="i-earnings" viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M8 19v-7"/><path d="M12 19V9"/><path d="M16 19v-4"/><path d="M20 19V7"/></symbol>
+    <symbol id="i-label" viewBox="0 0 24 24"><path d="M5 5h14v14H5Z"/><path d="M8 9h8"/><path d="M8 13h5"/></symbol>
+    <symbol id="i-touch" viewBox="0 0 24 24"><path d="M9 11V6a2 2 0 0 1 4 0v8"/><path d="M13 10h1a2 2 0 0 1 2 2v2"/><path d="M16 11h1a2 2 0 0 1 2 2v1"/><path d="M9 12 7.8 10.8a2 2 0 0 0-2.8 2.8l5 5.4c1 1.1 2.4 2 4 2h1a5 5 0 0 0 5-5v-2"/></symbol>
+    <symbol id="i-screen" viewBox="0 0 24 24"><path d="M5 4h14v16H5Z"/><path d="M9 8h6"/><path d="M9 12h6"/><path d="M9 16h4"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0Z"/><path d="M8 6H4a4 4 0 0 0 4 4"/><path d="M16 6h4a4 4 0 0 1-4 4"/><path d="M12 13v5"/><path d="M9 20h6"/></symbol>
+    <symbol id="i-list-check" viewBox="0 0 24 24"><path d="m5 7 2 2 4-4"/><path d="M13 8h6"/><path d="m5 16 2 2 4-4"/><path d="M13 17h6"/></symbol>
+    <symbol id="i-voice" viewBox="0 0 24 24"><path d="M12 4a3 3 0 0 0-3 3v4a3 3 0 0 0 6 0V7a3 3 0 0 0-3-3Z"/><path d="M5 10v1a7 7 0 0 0 14 0v-1"/><path d="M12 18v3"/></symbol>
+    <symbol id="i-arrow-step" viewBox="0 0 24 24"><path d="M5 12h13"/><path d="m13 6 6 6-6 6"/></symbol>
+    <symbol id="i-type" viewBox="0 0 24 24"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14"/><path d="M16 5v14"/></symbol>
+    <symbol id="i-flow" viewBox="0 0 24 24"><path d="M5 7h6"/><path d="M13 7h6"/><path d="M5 17h6"/><path d="M13 17h6"/><path d="M11 7c2 0 2 10 4 10"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h12"/><path d="M8 12h12"/><path d="M8 18h12"/><path d="M4 6h.01"/><path d="M4 12h.01"/><path d="M4 18h.01"/></symbol>
+    <symbol id="i-focus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3"/><path d="M12 18v3"/><path d="M3 12h3"/><path d="M18 12h3"/></symbol>
+    <symbol id="i-lightning" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 10-13h-7Z"/></symbol>
+    <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M7 12h10"/><path d="M10 18h4"/></symbol>
+    <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 7 4 12l5 5"/><path d="M5 12h9a5 5 0 0 1 5 5v1"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11V9a3 3 0 0 1 3-3h15"/><path d="m7 22-4-4 4-4"/><path d="M21 13v2a3 3 0 0 1-3 3H3"/></symbol>
+  </svg>
+  <main>
+    <section class="slide cover-image-slide" style="min-height:960px">
+      <img src="assets/cover/claimit-cover.png" alt="Claimit UX/UI app case study cover page" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#ffc21a">
+    </section>
+
+    <section class="slide"><p class="eyebrow">Product Overview</p>
+      <div class="grid-2">
+        <div><h2>Claimit turns everyday spending into everyday savings.</h2><p class="lead">Claimit is a hyper-local rewards platform where customers discover nearby businesses, scan bills, earn reward points, receive cashback, and use points as discounts on future purchases.</p>
+          <div class="kpis"><div class="kpi"><strong>100%</strong><span>Reward point value on eligible bills</span></div><div class="kpi"><strong>1%</strong><span>Cashback credited to wallet</span></div><div class="kpi"><strong>5 km</strong><span>Hyper-local offer radius</span></div><div class="kpi"><strong>Free</strong><span>Download, join, earn, and save</span></div></div>
+        </div>
+        <div class="phone-row"><img src="claimit-screens/Home page-nearby deals.png" alt="Nearby deals home screen"><img src="claimit-screens/reward Cash Wallet.png" alt="Reward wallet screen"></div>
+      </div>
+    </section>
+
+    <section class="slide soft"><p class="eyebrow">Project Goals</p>
+      <div class="project-goals-layout">
+        <div>
+          <h2>Make “Shop → Scan → Earn → Enjoy” simple to understand.</h2>
+          <p class="lead">The design goal was to make Claimit’s reward journey feel clear, trustworthy, and repeatable for customers while supporting local business discovery.</p>
+          <div class="project-goal-list">
+            <div class="project-goal-item"><span>01</span><div><strong>Explain the value fast</strong><p>Communicate rewards, discounts, and 1% cashback without confusion.</p></div></div>
+            <div class="project-goal-item"><span>02</span><div><strong>Guide the core habit</strong><p>Help users shop normally, scan bills, earn points, and redeem later.</p></div></div>
+            <div class="project-goal-item"><span>03</span><div><strong>Improve local discovery</strong><p>Surface nearby deals, brand deals, promo content, and local services.</p></div></div>
+            <div class="project-goal-item"><span>04</span><div><strong>Support both zones</strong><p>Make Reward Zone earning and Redeem Zone discounts easy to compare.</p></div></div>
+          </div>
+        </div>
+        <div class="project-goals-visual"><img src="assets/project-goals-shoppers.png" alt="Happy shoppers using ClaimIt reward success screens in a grocery store"></div>
+      </div>
+    </section>
+
+    <section class="slide"><p class="eyebrow">Requirements Gathering</p><h2>Requirement gathering from the Product Owner.</h2>
+      <div class="requirements-board">
+        <article class="requirements-brief">
+          <div>
+            <p class="label">Product Owner Workshop</p>
+            <h3>Business requirements were translated into UX priorities.</h3>
+            <p>We began by understanding the product vision, business objectives, target users, expected outcomes, and operational context before moving into research and design.</p>
+          </div>
+          <div class="requirements-outcome"><strong>Outcome</strong><p>Shared product understanding and a clear direction for UX research, flows, and design decisions.</p></div>
+        </article>
+        <div class="requirements-focus">
+          <div class="requirement-tile"><span>01</span><div><strong>Product vision</strong><p>Business goals and expected value.</p></div></div>
+          <div class="requirement-tile"><span>02</span><div><strong>Primary users</strong><p>User needs, roles, and motivations.</p></div></div>
+          <div class="requirement-tile"><span>03</span><div><strong>Core features</strong><p>Priority modules and must-have actions.</p></div></div>
+          <div class="requirement-tile"><span>04</span><div><strong>Customer journey</strong><p>Business workflow and user touchpoints.</p></div></div>
+          <div class="requirement-tile"><span>05</span><div><strong>Constraints</strong><p>Technical and operational boundaries.</p></div></div>
+          <div class="requirement-tile"><span>06</span><div><strong>Success metrics</strong><p>Expected outcomes and measurement points.</p></div></div>
+          <div class="requirement-tile"><span>07</span><div><strong>Assumptions</strong><p>Dependencies and possible edge cases.</p></div></div>
+          <div class="requirement-tile"><span>08</span><div><strong>UX direction</strong><p>Research questions and design priorities.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide pale"><p class="eyebrow">Competitor Analysis, Gap Analysis &amp; Edge Cases</p><h2>ClaimIt’s edge is offline, hyper-local value.</h2>
+      <div class="comparison"><div class="head">Capability</div><div class="head">Magicpin</div><div class="head">CashKaro</div><div class="head">CRED</div><div class="head">PhonePe</div><div class="head claim">ClaimIt</div><div>Local discovery</div><div class="yes">Yes</div><div class="no">Limited</div><div class="no">No</div><div class="no">Limited</div><div class="claim">Yes</div><div>Offline rewards</div><div class="yes">Yes</div><div class="no">No</div><div class="no">Limited</div><div class="yes">Yes</div><div class="claim">Yes</div><div>Online offers</div><div class="yes">Yes</div><div class="yes">Yes</div><div class="yes">Yes</div><div class="yes">Yes</div><div class="claim">Selective</div></div>
+      <div class="lower-split"><article class="card"><p class="label">Gaps identified</p><div class="compact-list"><div class="compact-item">Unclear point value</div><div class="compact-item">Fragmented loyalty apps</div><div class="compact-item">Slow confirmation</div><div class="compact-item">Low redemption trust</div></div></article><article class="card"><p class="label">Edge cases covered</p><div class="compact-list"><div class="compact-item">Expired offer</div><div class="compact-item">Rejected submission</div><div class="compact-item">Location mismatch</div><div class="compact-item">Pending review</div></div></article></div>
+    </section>
+
+    <section class="slide"><p class="eyebrow">User Pain Points &amp; Solutions</p><h2>Each frustration maps to a clear product response.</h2>
+      <div class="pain-solution-stage">
+        <figure class="emotion-photo" style="margin:0"><img src="assets/generated/pain-solutions/frustrated-user.png" alt="A frustrated shopper struggling with rewards on her phone"></figure>
+        <div class="compare-board">
+          <div class="compare-heads"><div class="compare-header pain">User Pain Points</div><div class="compare-header solution">Our Solutions</div></div>
+          <div class="compare-row"><article class="compare-item pain"><span class="compare-index">P1</span><div><h3>Hard to Find Relevant Deals</h3><p>Useful nearby offers are difficult to discover.</p></div></article><span class="compare-arrow">→</span><article class="compare-item solution"><span class="compare-index">S1</span><div><h3>Personalized Local Deals</h3><p>Offers reflect location, interests, and preferences.</p></div></article></div>
+          <div class="compare-row"><article class="compare-item pain"><span class="compare-index">P2</span><div><h3>Complicated Redemption</h3><p>Unclear steps make rewards difficult to use.</p></div></article><span class="compare-arrow">→</span><article class="compare-item solution"><span class="compare-index">S2</span><div><h3>Instant, Easy Redemption</h3><p>Simple steps create a hassle-free experience.</p></div></article></div>
+          <div class="compare-row"><article class="compare-item pain"><span class="compare-index">P3</span><div><h3>Rewards Take Too Long</h3><p>Users wait too long for points or cashback.</p></div></article><span class="compare-arrow">→</span><article class="compare-item solution"><span class="compare-index">S3</span><div><h3>Quick Rewards &amp; Cashback</h3><p>Approved value appears clearly in the wallet.</p></div></article></div>
+          <div class="compare-row"><article class="compare-item pain"><span class="compare-index">P4</span><div><h3>Irrelevant Notifications</h3><p>Too many alerts reduce attention and trust.</p></div></article><span class="compare-arrow">→</span><article class="compare-item solution"><span class="compare-index">S4</span><div><h3>Smart, Relevant Alerts</h3><p>Users see timely updates for offers they value.</p></div></article></div>
+        </div>
+        <figure class="emotion-photo" style="margin:0"><img src="assets/generated/pain-solutions/happy-user.png" alt="A happy shopper receiving a useful reward on her phone"></figure>
+      </div>
+    </section>
+
+    <section class="slide"><p class="eyebrow">User Groups</p><h2>Four audiences shaped the experience.</h2>
+      <div class="audience-grid">
+        <article class="audience-card">
+          <img class="audience-photo" src="assets/generated/user-groups/budget-shopper.png" alt="College student using a rewards app beside a laptop">
+          <div class="audience-copy"><div class="audience-head"><span class="audience-index">01</span><h3>Budget Shoppers</h3></div><p class="audience-desc">Students and young adults looking for deals, cashback, and smarter daily spending.</p><div class="audience-rule"></div><ul class="audience-traits"><li>Price-sensitive</li><li>Actively compares offers</li><li>Loves instant rewards</li></ul></div>
+        </article>
+        <article class="audience-card">
+          <img class="audience-photo" src="assets/generated/user-groups/frequent-consumer.png" alt="Frequent shopper checking her phone with a grocery cart">
+          <div class="audience-copy"><div class="audience-head"><span class="audience-index">02</span><h3>Frequent Consumers</h3></div><p class="audience-desc">People who spend regularly on groceries, dining, and essentials and expect value every time.</p><div class="audience-rule"></div><ul class="audience-traits"><li>Routine spending</li><li>Values convenience</li><li>Wants clear savings</li></ul></div>
+        </article>
+        <article class="audience-card">
+          <img class="audience-photo" src="assets/generated/user-groups/local-explorer.png" alt="Local explorer using her phone near a neighborhood café">
+          <div class="audience-copy"><div class="audience-head"><span class="audience-index">03</span><h3>Local Explorers</h3></div><p class="audience-desc">Users who enjoy discovering nearby cafés, stores, and hidden local deals.</p><div class="audience-rule"></div><ul class="audience-traits"><li>Explores new places</li><li>Interested in hyper-local offers</li><li>Engages with nearby brands</li></ul></div>
+        </article>
+        <article class="audience-card">
+          <img class="audience-photo" src="assets/generated/user-groups/merchant.png" alt="Local merchant standing inside his neighborhood shop">
+          <div class="audience-copy"><div class="audience-head"><span class="audience-index">04</span><h3>Merchants</h3></div><p class="audience-desc">Local shop owners who want repeat customers, simple campaigns, and better visibility.</p><div class="audience-rule"></div><ul class="audience-traits"><li>Runs local promotions</li><li>Needs simple tools</li><li>Tracks customer engagement</li></ul></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="slide pale"><p class="eyebrow">User Personas</p><h2>Customer personas</h2>
+      <div class="persona-sheets">
+        <article class="persona-profile blue-persona">
+          <div class="persona-visual"><img src="assets/generated/personas/priya-sharma.png" alt="Priya Sharma, a college student and budget-conscious shopper"><blockquote class="persona-quote">I love finding good deals and getting cashback on everyday spending.</blockquote></div>
+          <div class="persona-details">
+            <div class="persona-summary"><div class="persona-name"><h3>Priya Sharma</h3><div class="persona-meta">23 &nbsp;·&nbsp; College Student &nbsp;·&nbsp; Chennai</div></div><div class="persona-facts"><div class="persona-fact"><b>Student</b><span>Role</span></div><div class="persona-fact"><b>Mobile First</b><span>Behavior</span></div><div class="persona-fact"><b>Budget Conscious</b><span>Mindset</span></div></div></div>
+            <div class="persona-detail-grid"><div><h4>Goals</h4><ul><li>Find nearby deals</li><li>Redeem rewards fast</li><li>Maximize everyday savings</li><li>Redeem rewards quickly</li></ul></div><div><h4>Pain Points</h4><ul><li>Too many reward apps</li><li>Hidden offer rules</li><li>Slow cashback confirmation</li><li>Low trust in new platforms</li></ul></div><div class="persona-about"><h4>About</h4><p>Student shopper looking for clear, useful savings on daily spending.</p></div></div>
+          </div>
+        </article>
+        <article class="persona-profile">
+          <div class="persona-visual"><img src="assets/generated/personas/rohan-mehta.png" alt="Rohan Mehta, a young professional and regular consumer"><blockquote class="persona-quote">I want to support local businesses and get rewarded for everyday purchases.</blockquote></div>
+          <div class="persona-details">
+            <div class="persona-summary"><div class="persona-name"><h3>Rohan Mehta</h3><div class="persona-meta">34 &nbsp;·&nbsp; Young Professional &nbsp;·&nbsp; Chennai</div></div><div class="persona-facts"><div class="persona-fact"><b>Professional</b><span>Role</span></div><div class="persona-fact"><b>Regular Consumer</b><span>Behavior</span></div><div class="persona-fact"><b>Local Explorer</b><span>Mindset</span></div></div></div>
+            <div class="persona-detail-grid"><div><h4>Goals</h4><ul><li>Earn on daily spend</li><li>Find local offers</li><li>Discover nearby offers</li><li>Support local merchants</li></ul></div><div><h4>Pain Points</h4><ul><li>Multiple loyalty apps</li><li>Unclear redemption</li><li>Rewards arrive too slowly</li><li>Limited nearby offers</li></ul></div><div class="persona-about"><h4>About</h4><p>Regular shopper who wants simple local rewards and quick redemption.</p></div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="slide pale"><p class="eyebrow">User Personas</p><h2>Merchant personas</h2>
+      <div class="persona-sheets">
+        <article class="persona-profile">
+          <div class="persona-visual"><img src="assets/generated/personas/arun-kumar.png" alt="Arun Kumar, a neighborhood retail-store merchant"><blockquote class="persona-quote">I want an easy way to attract more customers and reward them without raising my costs.</blockquote></div>
+          <div class="persona-details">
+            <div class="persona-summary"><div class="persona-name"><h3>Arun Kumar</h3><div class="persona-meta">35 &nbsp;·&nbsp; Shop Merchant &nbsp;·&nbsp; Chennai</div></div><div class="persona-facts"><div class="persona-fact"><b>Kirana Store</b><span>Shop Type</span></div><div class="persona-fact"><b>Chennai</b><span>Location</span></div><div class="persona-fact"><b>8 Years</b><span>Experience</span></div></div></div>
+            <div class="persona-detail-grid"><div><h4>Goals</h4><ul><li>Increase repeat customers</li><li>Create simple offers</li><li>Build customer loyalty</li><li>Track offer performance</li></ul></div><div><h4>Pain Points</h4><ul><li>Hard to stand out</li><li>High ad cost</li><li>Little time for promotions</li><li>No redemption insights</li></ul></div><div class="persona-about"><h4>About</h4><p>Local merchant who needs simple promotions without extra complexity.</p></div></div>
+          </div>
+        </article>
+        <article class="persona-profile">
+          <div class="persona-visual"><img src="assets/generated/personas/neha-sharma.png" alt="Neha Sharma, a local café owner"><blockquote class="persona-quote">I want to grow my business locally and build strong customer relationships.</blockquote></div>
+          <div class="persona-details">
+            <div class="persona-summary"><div class="persona-name"><h3>Neha Sharma</h3><div class="persona-meta">32 &nbsp;·&nbsp; Local Business Owner &nbsp;·&nbsp; Chennai</div></div><div class="persona-facts"><div class="persona-fact"><b>Café</b><span>Business Type</span></div><div class="persona-fact"><b>Chennai</b><span>Location</span></div><div class="persona-fact"><b>6 Years</b><span>Experience</span></div></div></div>
+            <div class="persona-detail-grid"><div><h4>Goals</h4><ul><li>Increase local visibility</li><li>Retain customers</li><li>Run reward campaigns</li><li>Understand customer behavior</li></ul></div><div><h4>Pain Points</h4><ul><li>Limited budget</li><li>Finding local audiences</li><li>Manual, slow processes</li><li>No data to improve offers</li></ul></div><div class="persona-about"><h4>About</h4><p>Café owner who wants simple campaigns and stronger local loyalty.</p></div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="slide soft"><p class="eyebrow">Card Sorting</p>
+      <div class="card-sorting-layout">
+        <div class="card-sorting-copy">
+          <h2>The product follows a familiar mental model.</h2>
+          <p class="lead">We used card sorting to shape navigation around the way people naturally understand ClaimIt.</p>
+          <div class="sorting-story">
+            <div class="sorting-story-block">
+              <h3>Why card sorting?</h3>
+              <p>ClaimIt combines deals, rewards, redemption, wallet activity, notifications, and account tools. Card sorting helped us understand how users naturally group this content and which labels felt clearest before finalizing the navigation.</p>
+            </div>
+            <div class="sorting-story-block">
+              <h3>How we conducted it</h3>
+              <p>We conducted card-sorting sessions with real users from the key audience groups. Participants organized feature cards into categories, named the groups in their own words, and explained where they expected to find each function.</p>
+            </div>
+            <div class="sorting-outcome">
+              <strong>What we learned</strong>
+              <p>Users consistently separated discovery, reward activity, notifications, and profile settings. These patterns directly informed the final information architecture.</p>
+            </div>
+          </div>
+        </div>
+        <div class="sorting-board" role="img" aria-label="Card sorting groups for ClaimIt navigation">
+          <div class="sorting-group"><div class="sorting-group-title"><span>01</span>Discovery</div><div class="sorting-cards"><div class="sorting-card">Nearby Deals</div><div class="sorting-card">Brand Deals</div><div class="sorting-card">Categories</div><div class="sorting-card">Search</div></div></div>
+          <div class="sorting-group"><div class="sorting-group-title"><span>02</span>Rewards</div><div class="sorting-cards"><div class="sorting-card">Scan Bill</div><div class="sorting-card">Bill Reader</div><div class="sorting-card">Reward Success</div><div class="sorting-card">Cash Wallet</div></div></div>
+          <div class="sorting-group"><div class="sorting-group-title"><span>03</span>Redeem</div><div class="sorting-cards"><div class="sorting-card">Redeem Zone</div><div class="sorting-card">Offer Details</div><div class="sorting-card">Confirm Redeem</div><div class="sorting-card">Discount Applied</div></div></div>
+          <div class="sorting-group"><div class="sorting-group-title"><span>04</span>Account</div><div class="sorting-cards"><div class="sorting-card">Profile</div><div class="sorting-card">History</div><div class="sorting-card">Favourites</div><div class="sorting-card">Settings</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide user-flow-slide"><p class="eyebrow">User Flow</p><h2>Three clear journeys drive ClaimIt.</h2><p class="lead">Each path keeps the next action visible and moves users quickly toward a meaningful outcome.</p>
+      <div class="user-flow-board">
+        <div class="journey-row earn">
+          <div class="journey-meta"><div class="journey-badge">♢</div><div><h3>1. Earn Rewards</h3><p>User scans a bill and earns reward points and cashback.</p></div></div>
+          <div class="journey-path">
+            <div class="journey-step"><span class="step-icon">⌂</span><span>Home</span></div><span class="journey-arrow">→</span>
+            <div class="journey-step"><span class="step-icon">⌗</span><span>Bill Scanner</span></div><span class="journey-arrow">→</span>
+            <div class="journey-step"><span class="step-icon">▤</span><span>Scan Bill</span></div><span class="journey-arrow">→</span>
+            <div class="journey-step"><span class="step-icon">▧</span><span>Bill Reader</span></div><span class="journey-arrow">→</span>
+            <div class="journey-step"><span class="step-icon">✓</span><span>Reward Success</span></div><span class="journey-arrow">→</span>
+            <div class="journey-step"><span class="step-icon">▣</span><span>Points &amp; Cashback Added</span></div>
+          </div>
+        </div>
+        <div class="journey-row redeem">
+          <div class="journey-meta"><div class="journey-badge">◇</div><div><h3>2. Redeem Points</h3><p>User redeems points as an instant discount.</p></div></div>
+          <div class="journey-path">
+            <div class="journey-step"><span class="step-icon">▦</span><span>Main Menu</span></div><span class="journey-arrow">→</span>
+            <div class="journey-step"><span class="step-icon">◇</span><span>Redeem</span></div><span class="journey-arrow">→</span>
+            <div class="journey-step"><span class="step-icon">⌂</span><span>Select Shop<br>(Redeem Zone)</span></div><span class="journey-arrow">→</span>
+            <div class="journey-step"><span class="step-icon">◇</span><span>View Offer &amp;<br>Points Required</span></div><span class="journey-arrow">→</span>
+            <div class="journey-step"><span class="step-icon">✓</span><span>Confirm &amp; Redeem</span></div><span class="journey-arrow">→</span>
+            <div class="journey-step"><span class="step-icon">▱</span><span>Discount Applied<br>at Checkout</span></div>
+          </div>
+        </div>
+        <div class="journey-row discover">
+          <div class="journey-meta"><div class="journey-badge">●</div><div><h3>3. Discover Deals</h3><p>User finds and explores nearby deals and offers.</p></div></div>
+          <div class="journey-path">
+            <div class="journey-step"><span class="step-icon">⌂</span><span>Home</span></div><span class="journey-arrow">→</span>
+            <div class="journey-step"><span class="step-icon">⌖</span><span>Nearby Deals</span></div><span class="journey-arrow">→</span>
+            <div class="journey-step"><span class="step-icon">⌂</span><span>Browse Shops<br>&amp; Offers</span></div><span class="journey-arrow">→</span>
+            <div class="journey-step"><span class="step-icon">ⓘ</span><span>Shop Details<br>Page</span></div><span class="journey-arrow">→</span>
+            <div class="journey-step"><span class="step-icon">◇</span><span>View Offer Details</span></div><span class="journey-arrow">→</span>
+            <div class="journey-step"><span class="step-icon">♢</span><span>Visit Shop &amp;<br>Earn Rewards</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide ia-slide"><p class="eyebrow">Information Architecture</p><h2>A clear structure from entry to reward.</h2><p class="lead">Authentication leads into four focused product areas, keeping discovery, redemption, scanning, and account tools easy to locate.</p>
+      <div class="ia-map">
+        <div class="ia-map-inner">
+          <div class="ia-top">
+            <div class="ia-brand">CLAIMIT APP</div><div class="ia-down"></div>
+            <div class="ia-node"><span class="ia-icon">✦</span>Splash Screen</div><div class="ia-down"></div>
+            <div class="ia-auth"><div class="ia-node" style="--node-color:#f26b18"><span class="ia-icon">♙</span>Signup Page</div><div class="ia-node" style="--node-color:#ef9f00"><span class="ia-icon">▣</span>Login Page</div></div>
+            <div class="ia-down"></div><div class="ia-node" style="--node-color:#16924b"><span class="ia-icon">⬡</span>OTP Verification</div>
+            <div class="ia-down"></div><div class="ia-node" style="--node-color:#793bd4"><span class="ia-icon">⌖</span>Location Setup Screen</div>
+          </div>
+          <div class="ia-branches">
+            <div class="ia-branch home">
+              <div class="ia-branch-head">⌂ &nbsp; HOME</div>
+              <div class="ia-list">
+                <div class="ia-item"><span class="ia-item-icon">⌕</span><span>Global Search</span></div>
+                <div class="ia-item"><span class="ia-item-icon">♢</span><span>Notifications</span></div>
+                <div class="ia-item"><span class="ia-item-icon">◁</span><span>National Banner</span></div>
+                <div class="ia-item"><span class="ia-item-icon">▦</span><span>Categories</span><span class="ia-child">25+</span></div>
+                <div class="ia-item"><span class="ia-item-icon">⌖</span><span>Nearby Deals</span><span class="ia-child">List of Shops</span></div>
+                <div class="ia-item"><span class="ia-item-icon">◇</span><span>Brand Deals</span><span class="ia-child">List of Shops</span></div>
+              </div>
+            </div>
+            <div class="ia-branch menu">
+              <div class="ia-branch-head">▦ &nbsp; MAIN MENU</div>
+              <div class="ia-list">
+                <div class="ia-item"><span class="ia-item-icon">♢</span><span>Rewards</span></div>
+                <div class="ia-item"><span class="ia-item-icon">◇</span><span>Redeem</span><span class="ia-child">Shop Detail</span></div>
+                <div class="ia-item"><span class="ia-item-icon">⊕</span><span>Redeem+</span><span class="ia-child">Shop Detail</span></div>
+                <div class="ia-item"><span class="ia-item-icon">▤</span><span>Reelz Zone</span></div>
+                <div class="ia-item"><span class="ia-item-icon">⌖</span><span>Nearby Deals</span></div>
+                <div class="ia-item"><span class="ia-item-icon">◇</span><span>Brand Deals</span></div>
+              </div>
+              <div class="ia-shared">▱ &nbsp; Shop Details Page</div>
+            </div>
+            <div class="ia-branch scanner">
+              <div class="ia-branch-head">⌗ &nbsp; BILL SCANNER</div>
+              <div class="ia-list">
+                <div class="ia-item"><span class="ia-item-icon">▱</span><span>Reward Shop Detail Page</span></div>
+                <div class="ia-item"><span class="ia-item-icon">⌗</span><span>Bill Scanner</span></div>
+                <div class="ia-item"><span class="ia-item-icon">▤</span><span>Bill Reader</span><span class="ia-child">Code Generated</span></div>
+                <div class="ia-item"><span class="ia-item-icon">✓</span><span>Reward Success</span><span class="ia-child">Get Discounts</span></div>
+                <div class="ia-item"><span class="ia-item-icon">▣</span><span>Added Cash Wallet</span><span class="ia-child">Success</span></div>
+              </div>
+            </div>
+            <div class="ia-branch profile">
+              <div class="ia-branch-head">● &nbsp; USER PROFILE</div>
+              <div class="ia-list">
+                <div class="ia-item"><span class="ia-item-icon">◷</span><span>History</span></div>
+                <div class="ia-item"><span class="ia-item-icon">♡</span><span>My Favourites</span></div>
+                <div class="ia-item"><span class="ia-item-icon">⚙</span><span>Settings</span></div>
+                <div class="ia-item"><span class="ia-item-icon">▣</span><span>My Wallet</span></div>
+                <div class="ia-item"><span class="ia-item-icon">▥</span><span>My Earnings</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide soft"><p class="eyebrow">Paper Sketches</p><h2>Early ideas were tested with fast hand sketches.</h2><p class="lead">Before moving to digital wireframes, we explored the core ClaimIt screens on paper to validate structure, navigation, and reward actions quickly.</p>
+      <div class="paper-sketch-layout">
+        <div class="paper-sketch-image">
+          <img src="assets/paper-sketches.png" alt="Paper sketches showing ClaimIt home, deals, offer detail, redemption success, and wallet screens">
+        </div>
+        <div class="paper-sketch-content">
+          <div class="sketch-note">
+            <b>Why Paper Sketches?</b>
+            <p>Paper sketches helped us focus on layout, hierarchy, and user decisions before spending time on visual styling. This made it easier to compare ideas, remove weak flows, and align the team around the simplest experience.</p>
+          </div>
+          <div class="sketch-points">
+            <div class="sketch-point"><span>01</span><div><strong>Started with key tasks</strong><p>We mapped the main actions users need: discover nearby deals, scan bills, redeem offers, and track cashback.</p></div></div>
+            <div class="sketch-point"><span>02</span><div><strong>Explored screen structure</strong><p>Each sketch tested where search, categories, offer cards, wallet balance, and redemption details should appear.</p></div></div>
+            <div class="sketch-point"><span>03</span><div><strong>Validated before wireframes</strong><p>The strongest layouts were selected and refined into digital wireframes with clearer spacing, states, and navigation.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide"><p class="eyebrow">Digital Wireframes</p><h2>Low-fidelity screens defined the product structure.</h2><p class="lead">The selected paper sketches were converted into digital wireframes to refine hierarchy, spacing, navigation, and key reward states before visual design.</p>
+      <div class="wireframe-layout">
+        <div class="wireframe-image">
+          <img src="assets/digital-wireframes.png" alt="Digital wireframes showing ClaimIt home, deals, offer detail, redemption success, and wallet screens">
+        </div>
+        <div class="wireframe-content">
+          <div class="wireframe-note">
+            <b>Why Digital Wireframes?</b>
+            <p>Digital wireframes helped us turn rough ideas into a clearer product blueprint. We used them to test layout consistency, check screen transitions, and make sure the core reward journey was simple before adding color and branding.</p>
+          </div>
+          <div class="wireframe-points">
+            <div class="wireframe-point"><span>01</span><div><strong>Converted sketches into screens</strong><p>Home, deals, offer detail, redemption success, and wallet were structured as the core user journey.</p></div></div>
+            <div class="wireframe-point"><span>02</span><div><strong>Refined hierarchy and spacing</strong><p>Search, categories, offer cards, CTA placement, and bottom navigation were adjusted for better scanning.</p></div></div>
+            <div class="wireframe-point"><span>03</span><div><strong>Prepared for visual design</strong><p>The wireframes became the foundation for UI styling, design system components, and prototype screens.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide dark"><p class="eyebrow">Visual Design</p><h2>One visual language connects every product moment.</h2><p class="lead">Strong hierarchy, rounded surfaces, clear actions, and consistent reward states support discovery, earning, and redemption.</p>
+      <div class="screen-wall"><img src="claimit-screens/Home page-nearby deals.png" alt="Home screen"><img src="claimit-screens/primary search paage.png" alt="Search screen"><img src="claimit-screens/BIll Reader.png" alt="Bill reader screen"><img src="claimit-screens/reward sucess.png" alt="Reward success screen"><img src="claimit-screens/reward Cash Wallet.png" alt="Reward wallet screen"><img src="claimit-screens/redeems+ success page.png" alt="Redemption success screen"></div>
+    </section>
+
+    <section class="slide pale"><p class="eyebrow">Interactive Prototype</p>
+      <div class="prototype">
+        <div class="prototype-copy">
+          <div><h2>The Figma prototype connected the full reward journey.</h2><p class="lead">We used the prototype to validate the experience before development and align stakeholders around real user flows.</p>
+            <div class="prototype-kpis"><div class="prototype-kpi"><strong>3</strong><span>Core journeys</span></div><div class="prototype-kpi"><strong>8+</strong><span>Key states</span></div><div class="prototype-kpi"><strong>1</strong><span>Figma flow</span></div></div>
+          </div>
+          <div class="prototype-checks"><div class="prototype-check"><span>1</span>Discovery, scan, redemption, and wallet flows were connected.</div><div class="prototype-check"><span>2</span>Success, pending, and reward feedback states were reviewed.</div><div class="prototype-check"><span>3</span>The walkthrough helped developers understand expected behavior.</div></div>
+        </div>
+        <div class="prototype-preview" aria-label="ClaimIt prototype flow preview">
+          <div class="prototype-preview-grid">
+            <img src="claimit-screens/Home page-nearby deals.png" alt="Prototype home screen">
+            <img src="claimit-screens/BIll Reader.png" alt="Prototype bill reader screen">
+            <img src="claimit-screens/reward sucess.png" alt="Prototype reward success screen">
+            <img src="claimit-screens/reward Cash Wallet.png" alt="Prototype wallet screen">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide soft"><p class="eyebrow">Design System Components</p><h2>Reusable components made the product faster and more consistent.</h2><p class="lead">The ClaimIt component library defined repeatable UI patterns for buttons, chips, headers, cards, navigation, filters, icons, and featured zones.</p>
+      <div class="component-system-layout">
+        <div class="component-board">
+          <img src="assets/claimit-design-system.png" alt="ClaimIt design system components including buttons, chips, tabs, headers, cards, footer navigation, featured zones, and filter controls">
+        </div>
+        <div class="component-system-content">
+          <div class="component-note">
+            <b>Why Components?</b>
+            <p>Components turn repeated interface patterns into reusable building blocks. They keep screens visually consistent, reduce redesign work, and make every new feature easier to assemble.</p>
+          </div>
+          <div class="component-points">
+            <div class="component-point"><span>01</span><div><strong>Why it is important</strong><p>Buttons, cards, tabs, headers, and filters behave the same across discovery, redemption, wallet, and profile flows.</p></div></div>
+            <div class="component-point"><span>02</span><div><strong>How we used it in Figma</strong><p>We created master components with variants for active, inactive, primary, secondary, selected, and default states.</p></div></div>
+            <div class="component-point"><span>03</span><div><strong>Design to handoff</strong><p>Reusable components helped developers inspect spacing, states, colors, and usage rules from one organized source.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide"><p class="eyebrow">Color &amp; Typography</p><h2>Visual foundations created a clear and consistent product language.</h2><p class="lead">Color, typography, spacing, and mobile grid rules were documented so every screen could feel aligned, readable, and easy to scale.</p>
+      <div class="foundation-layout">
+        <div class="foundation-board">
+          <img src="assets/color-typography-foundations.png" alt="ClaimIt color palette, typography scale, spacing system, and mobile grid guide">
+        </div>
+        <div class="foundation-content">
+          <div class="foundation-note">
+            <b>Why Foundations?</b>
+            <p>Foundations define the visual rules behind every interface decision. They make the product feel intentional instead of screen-by-screen, and they give the team a shared reference for future updates.</p>
+          </div>
+          <div class="foundation-points">
+            <div class="foundation-point"><span>01</span><div><strong>Color system</strong><p>Blue builds trust and anchors actions, yellow highlights rewards, and neutral colors keep content readable.</p></div></div>
+            <div class="foundation-point"><span>02</span><div><strong>Typography scale</strong><p>Poppins was used with clear heading and body sizes so titles, labels, and descriptions stay easy to scan.</p></div></div>
+            <div class="foundation-point"><span>03</span><div><strong>Spacing and grid</strong><p>A consistent mobile spacing system helped align cards, buttons, lists, and screen layouts across the app.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide soft"><p class="eyebrow">Accessibility</p><h2>Accessibility review focused on clarity and confidence.</h2><p class="lead">We checked the core screens for readable labels, visible feedback, comfortable tap areas, and alternate input options.</p>
+      <div class="accessibility-bento">
+        <div class="a11y-panel">
+          <h3>Why accessibility mattered</h3>
+          <p class="lead">Claimit depends on quick actions in real shopping contexts. Users need to understand what to tap, what changed, and what happens next.</p>
+          <div class="a11y-list">
+            <div class="a11y-row"><div class="a11y-icon">⌑</div><div><strong>Labels with icons</strong><p>Important actions are easier to recognize.</p></div></div>
+            <div class="a11y-row"><div class="a11y-icon">✓</div><div><strong>Clear feedback</strong><p>Success and wallet states build trust.</p></div></div>
+            <div class="a11y-row"><div class="a11y-icon">☝</div><div><strong>Large touch targets</strong><p>Scanning, redeeming, and filtering stay easier.</p></div></div>
+          </div>
+        </div>
+        <div class="a11y-panel">
+          <div class="a11y-stats">
+            <div class="a11y-stat"><div class="a11y-icon">▯</div><div><strong>41</strong><p>screens reviewed</p></div></div>
+            <div class="a11y-stat"><div class="a11y-icon">☆</div><div><strong>10</strong><p>strong screens</p></div></div>
+            <div class="a11y-stat"><div class="a11y-icon">☷</div><div><strong>5</strong><p>review criteria</p></div></div>
+          </div>
+          <h3>Key takeaways</h3>
+          <div class="a11y-card-grid">
+            <div class="a11y-mini"><div class="a11y-icon">◉</div><div><strong>Alternative inputs</strong><p>Voice, OTP, and location options.</p></div></div>
+            <div class="a11y-mini"><div class="a11y-icon">⇥</div><div><strong>Guided states</strong><p>Users know the next step.</p></div></div>
+            <div class="a11y-mini"><div class="a11y-icon">Aa</div><div><strong>Improve contrast</strong><p>Metadata needs stronger visibility.</p></div></div>
+            <div class="a11y-mini"><div class="a11y-icon">Ⅱ</div><div><strong>Control banners</strong><p>Add pause support for rotating content.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide"><p class="eyebrow">Usability</p><h2>Usability focused on simple, predictable reward tasks.</h2><p class="lead">The review kept the main journeys easy to follow: discover offers, scan bills, redeem points, and check wallet activity.</p>
+      <div class="usability-bento">
+        <div class="usability-panel usability-note">
+          <h3>Why usability mattered</h3>
+          <p class="lead">Users open Claimit while shopping, so every screen needed one clear priority and a familiar path forward.</p>
+          <div class="usability-list">
+            <div class="usability-row"><div class="usability-icon">↝</div><div><strong>Simple flow</strong><p>One primary action per screen.</p></div></div>
+            <div class="usability-row"><div class="usability-icon">▦</div><div><strong>Scannable lists</strong><p>Cards, filters, and sections stay easy to read.</p></div></div>
+            <div class="usability-row"><div class="usability-icon">▣</div><div><strong>Confirmation screens</strong><p>Users feel confident after redemption.</p></div></div>
+          </div>
+        </div>
+        <div class="usability-panel">
+          <div class="usability-stats">
+            <div class="usability-stat"><div class="usability-icon">♕</div><div><strong>Top 10</strong><p>best screens</p></div></div>
+            <div class="usability-stat"><div class="usability-icon">◎</div><div><strong>Low</strong><p>cognitive load</p></div></div>
+            <div class="usability-stat"><div class="usability-icon">☝</div><div><strong>One</strong><p>clear action</p></div></div>
+          </div>
+          <h3>Key takeaways</h3>
+          <div class="usability-card-grid">
+            <div class="usability-mini"><div class="usability-icon">ϟ</div><div><strong>Fast path first</strong><p>Primary task stays prominent.</p></div></div>
+            <div class="usability-mini"><div class="usability-icon">▽</div><div><strong>Useful filters</strong><p>Users narrow deals quickly.</p></div></div>
+            <div class="usability-mini"><div class="usability-icon">↶</div><div><strong>Easy recovery</strong><p>Back actions support control.</p></div></div>
+            <div class="usability-mini"><div class="usability-icon">↻</div><div><strong>Repeated patterns</strong><p>Navigation feels consistent.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide pale"><p class="eyebrow">Developer Handoff</p><h2>Design intent became an implementation-ready package.</h2><p class="lead">The final handoff connected flows, components, specs, states, and assets so developers could build with fewer assumptions.</p>
+      <div class="handoff-board">
+        <article class="handoff-hero">
+          <div>
+            <p class="label">Handoff package</p>
+            <h3>One organized Figma source for product, UI, and implementation details.</h3>
+            <p>Files were structured by flow and screen state. Each component, token, spacing rule, and export was prepared so the engineering team could inspect, compare, and implement confidently.</p>
+          </div>
+          <div class="handoff-package">
+            <div class="handoff-pack-item"><strong>41</strong><span>Screens organized</span></div>
+            <div class="handoff-pack-item"><strong>24+</strong><span>Core components</span></div>
+            <div class="handoff-pack-item"><strong>6</strong><span>State groups</span></div>
+          </div>
+        </article>
+        <div class="handoff-side">
+          <article class="handoff-card">
+            <h3>What developers received</h3>
+            <div class="handoff-spec-grid">
+              <div class="handoff-spec"><strong>Flow-ready screens</strong><p>Home, deals, scanner, wallet, profile, and redemption paths.</p></div>
+              <div class="handoff-spec"><strong>Component specs</strong><p>Buttons, cards, chips, tabs, headers, navigation, and filters.</p></div>
+              <div class="handoff-spec"><strong>Visual tokens</strong><p>Color, type scale, spacing, radius, elevation, and grid rules.</p></div>
+              <div class="handoff-spec"><strong>State coverage</strong><p>Default, active, loading, success, error, empty, and rejected states.</p></div>
+              <div class="handoff-spec"><strong>Asset exports</strong><p>Icons, illustrations, app images, marketing visuals, and brand files.</p></div>
+              <div class="handoff-spec"><strong>Prototype notes</strong><p>Clickable flows with comments for behavior, transitions, and edge cases.</p></div>
+            </div>
+          </article>
+          <article class="handoff-card">
+            <h3>Handoff workflow</h3>
+            <div class="handoff-timeline">
+              <div class="handoff-step"><span>1</span><div><strong>Review flow structure</strong><p>Developers walked through key journeys before implementation.</p></div></div>
+              <div class="handoff-step"><span>2</span><div><strong>Inspect components and tokens</strong><p>Reusable parts were mapped to consistent UI behavior.</p></div></div>
+              <div class="handoff-step"><span>3</span><div><strong>Clarify edge cases</strong><p>Pending, rejected, expired, and success states were documented.</p></div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide dark"><p class="eyebrow">Building Landing Pages</p>
+      <div class="landing"><div><h2>Product value extended beyond the app.</h2><p class="lead">Landing pages explain the reward model to shoppers and merchants while maintaining the same visual language.</p><div class="bullet-list"><div class="bullet">Clear customer and merchant benefits</div><div class="bullet">Simple registration and onboarding</div><div class="bullet">Reward model explained visually</div><div class="bullet">Campaign-ready promotional areas</div></div></div><div class="landing-visual"><img src="assets/claimit-landing-pages.png" alt="ClaimIt customer and business landing pages shown on laptop mockups"></div></div>
+    </section>
+
+    <section class="slide soft"><p class="eyebrow">After Launch Support</p><h2>Launch support extended the product into brand and marketing.</h2><p class="lead">After the app experience was designed, the same visual system was used to support acquisition, merchant adoption, and long-term brand consistency.</p>
+      <div class="launch-support-split">
+        <article class="launch-support-card">
+          <div class="launch-support-media"><img src="assets/social-media-creatives.png" alt="ClaimIt social media creative templates for customers and merchants"></div>
+          <div class="launch-support-copy">
+            <p class="label">Social Media Creatives Support</p>
+            <h3>Campaign-ready posts for launch and growth.</h3>
+            <p>Social creatives helped explain the app value quickly across customer and merchant channels while keeping the message recognizable.</p>
+          </div>
+        </article>
+        <article class="launch-support-card">
+          <div class="launch-support-media"><img src="assets/brand-identy.png" alt="ClaimIt brand identity guideline pages and branded collateral"></div>
+          <div class="launch-support-copy">
+            <p class="label">Brand Identity Support</p>
+            <h3>A guideline system for consistent execution.</h3>
+            <p>The brand identity document gave the team rules for logo usage, colors, typography, layouts, and promotional assets after launch.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="slide gold">
+      <div class="conclusion"><div><p class="eyebrow" style="color:var(--night)">Final Conclusion</p><h1>A clearer reward journey and a system ready to grow.</h1><div class="grid-2" style="margin-top:40px;align-items:start"><div><p class="label" style="color:var(--night)">Product outcome</p><p>Visible value, local relevance, reusable components, and clearer delivery.</p></div><div><p class="label" style="color:var(--night)">Design outcome</p><p>A consistent experience across discovery, earning, redemption, and support.</p></div></div></div><blockquote class="learning">Trust is not supporting UX. In a rewards product, trust is the product.</blockquote></div>
+    </section>
+  </main>
+  <script>
+    (() => {
+      const iconByText = new Map([
+        ["⌂", "i-home"], ["⌗", "i-scan"], ["▤", "i-receipt"], ["▧", "i-document"],
+        ["✓", "i-check"], ["▣", "i-wallet"], ["▦", "i-menu"], ["◇", "i-tag"],
+        ["▱", "i-shop"], ["●", "i-location"], ["⌖", "i-location"], ["ⓘ", "i-info"],
+        ["♢", "i-gift"], ["✦", "i-spark"], ["♙", "i-user-plus"], ["⬡", "i-shield"],
+        ["⌕", "i-search"], ["◁", "i-banner"], ["⊕", "i-tag"], ["◷", "i-clock"],
+        ["♡", "i-heart"], ["⚙", "i-settings"], ["▥", "i-earnings"], ["⌑", "i-label"],
+        ["☝", "i-touch"], ["▯", "i-screen"], ["☆", "i-trophy"], ["☷", "i-list-check"],
+        ["◉", "i-voice"], ["⇥", "i-arrow-step"], ["Aa", "i-type"], ["Ⅱ", "i-pause"],
+        ["↝", "i-flow"], ["♕", "i-trophy"], ["◎", "i-focus"], ["ϟ", "i-lightning"],
+        ["▽", "i-filter"], ["↶", "i-undo"], ["↻", "i-repeat"]
+      ]);
+      const namedIcons = new Map([
+        ["Login Page", "i-login"], ["MAIN MENU", "i-menu"], ["USER PROFILE", "i-location"],
+        ["HOME", "i-home"], ["BILL SCANNER", "i-scan"], ["Rewards", "i-gift"],
+        ["Redeem", "i-tag"], ["Redeem+", "i-tag"], ["Reelz Zone", "i-video"],
+        ["Brand Deals", "i-tag"], ["Categories", "i-grid"], ["Notifications", "i-bell"],
+        ["My Wallet", "i-wallet"], ["My Earnings", "i-earnings"]
+      ]);
+      const iconSvg = (id) => {
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("class", "icon-svg");
+        svg.setAttribute("aria-hidden", "true");
+        const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+        use.setAttribute("href", `#${id}`);
+        svg.appendChild(use);
+        return svg;
+      };
+      document.querySelectorAll(".step-icon,.ia-icon,.ia-item-icon,.a11y-icon,.usability-icon,.journey-badge").forEach((node) => {
+        const text = node.textContent.trim();
+        const label = node.parentElement?.textContent?.replace(text, "").trim();
+        const id = namedIcons.get(label) || iconByText.get(text);
+        if (!id) return;
+        node.textContent = "";
+        node.appendChild(iconSvg(id));
+      });
+      document.querySelectorAll(".ia-branch-head").forEach((node) => {
+        const label = node.textContent.replace(/[^\w\s+]/g, "").trim();
+        const id = namedIcons.get(label);
+        if (!id) return;
+        const text = node.textContent.replace(/^[^\w]+/, "").trim();
+        node.textContent = "";
+        node.appendChild(iconSvg(id));
+        node.append(` ${text}`);
+      });
+    })();
+  </script>
+</body>
+</html>
