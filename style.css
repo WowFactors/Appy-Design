@@ -43,7 +43,7 @@
      background-color: var(--background);
      color: var(--foreground);
      font-family: var(--font-sans);
-     font-weight: 500;
+     font-weight: 600;
      line-height: 1.6;
      -webkit-font-smoothing: antialiased;
      text-rendering: optimizeLegibility;
@@ -61,7 +61,7 @@
 
  p,
  li {
-     font-weight: 500;
+     font-weight: 600;
  }
 
  a {
@@ -127,7 +127,7 @@
  .contact-subtitle,
  .error-page > p:not(.error-code) {
      color: color-mix(in oklch, var(--foreground) 90%, black);
-     font-weight: 500;
+     font-weight: 600;
  }
 
  .hero-p,
@@ -154,7 +154,7 @@
  .footer-bottom,
  .products-cta p {
      color: color-mix(in oklch, var(--background) 88%, white);
-     font-weight: 500;
+     font-weight: 600;
  }
 
  .footer-links a,
@@ -244,6 +244,12 @@
      align-items: center;
      gap: 0.5rem;
  }
+ .nav-logo img {
+     width: 190px;
+     height: auto;
+     display: block;
+ }
+
 
  .nav-logo-icon {
      height: 2.25rem;
@@ -269,7 +275,7 @@
      align-items: center;
      gap: clamp(0.85rem, 1.8vw, 1.75rem);
      font-size: 1rem;
-     font-weight: 500;
+     font-weight: 600;
  }
 
  @media (min-width: 768px) {
@@ -345,7 +351,7 @@
      border-radius: 0.65rem;
      color: var(--foreground);
      font-size: 0.95rem;
-     font-weight: 500;
+     font-weight: 600;
      line-height: 1.25;
      transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
  }
@@ -1165,7 +1171,7 @@
 .seo-faq-grid p {
     line-height: 1.7;
     color: color-mix(in oklch, var(--foreground) 90%, black);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 @media (min-width: 768px) {
@@ -1356,7 +1362,7 @@
     max-width: 780px;
     margin-bottom: 1rem;
     color: color-mix(in oklch, var(--foreground) 90%, black);
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.75;
 }
 
@@ -1376,7 +1382,7 @@
 .service-faq details p,
 .related-services span,
 .service-cta p {
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.7;
 }
 
@@ -2358,12 +2364,19 @@
 
  @media (max-width: 900px) and (min-width: 768px) {
      .nav-logo img {
-         max-width: 8.5rem;
+         max-width: 10.75rem;
          height: auto;
      }
 
      .nav-cta {
          padding-inline: 0.8rem;
+     }
+ }
+
+ @media (max-width: 640px) {
+     .nav-logo img {
+         width: 165px;
+         height: auto;
      }
  }
 
@@ -3306,7 +3319,7 @@
     box-shadow: none;
     font-family: var(--font-sans);
     font-size: 1.25rem;
-    font-weight: 400;
+    font-weight: 600;
     transition: background 150ms ease, color 150ms ease;
 }
 
@@ -3439,7 +3452,7 @@
     color: color-mix(in oklch, var(--pop) 75%, var(--ink));
     font-family: var(--font-sans);
     font-size: 0.7rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .contact-field.is-invalid .contact-error {
@@ -3647,7 +3660,7 @@
 
 /* Final readability overrides for Appy Design pages */
 body {
-    font-weight: 500;
+    font-weight: 600;
 }
 
 h1,
@@ -3683,7 +3696,7 @@ h4,
 .contact-subtitle,
 .error-page > p:not(.error-code) {
     color: color-mix(in oklch, var(--foreground) 90%, black);
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.7;
 }
 
@@ -3705,7 +3718,7 @@ h4,
 .footer-bottom,
 .products-cta p {
     color: color-mix(in oklch, var(--background) 88%, white);
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.7;
 }
 
